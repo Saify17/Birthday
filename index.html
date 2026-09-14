@@ -113,6 +113,10 @@
         -webkit-touch-callout: none;
         -webkit-tap-highlight-color: transparent;
       }
+      /* Tap-to-reveal reason card */
+.reason-card { transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
+.reason-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,77,109,0.18); }
+.reason-card:active { transform: scale(0.98); }
       body {
         background: linear-gradient(135deg, #fff0f3 0%, #ffe3e8 30%, #ffd6df 60%, #fff5f7 100%);
         background-size: 400% 400%;
@@ -1694,66 +1698,68 @@
       ];
 
       let reasonsRevealed = 0;
-      function renderReasonsGrid() {
-        const grid = document.getElementById("reasons-grid");
-        grid.innerHTML = "";
-        for (let i = 0; i < 6; i++) {
-          const card = document.createElement("div");
-          card.className = "p-5 bg-white/80 backdrop-blur rounded-2xl border-2 border-romantic-100 text-center text-stone-400 font-semibold text-sm shadow reveal";
-          card.style.transitionDelay = `${i * 0.05}s`;
-          card.innerHTML = `<span class="text-3xl block mb-2">🎁</span>Card #${i+1} — Tap reveal below to open`;
-          grid.appendChild(card);
-        }
+      // Build a single "locked" card that says "Tap me!"
+      function makeReasonPlaceholder(reasonIdx) {
+        const card = document.createElement("div");
+        card.className = "reason-card cursor-pointer p-5 bg-white/80 backdrop-blur rounded-2xl border-2 border-romantic-100 text-center shadow reveal hover:border-romantic-400";
+        card.style.transitionDelay = `${(reasonIdx % 6) * 0.05}s`;
+        card.dataset.reasonIdx = String(reasonIdx);
+        card.innerHTML = `
+          <span class="text-3xl block mb-1">🎁</span>
+          <p class="font-bold text-romantic-600 text-sm">Tap me!</p>
+          <p class="text-[11px] text-stone-400 mt-1">Reason #${reasonIdx + 1}</p>
+        `;
+        card.onclick = () => revealReasonCard(card, parseInt(card.dataset.reasonIdx, 10));
+        return card;
       }
 
-      function revealNextReason() {
-        const grid = document.getElementById("reasons-grid");
-        if (reasonsRevealed >= reasonsList.length) {
-          // Loop back
-          renderReasonsGrid();
-          reasonsRevealed = 0;
-          document.getElementById("reasons-progress").textContent = `0 / ${reasonsList.length} reasons revealed`;
-          return;
-        }
-
-        // Replace the first "locked" card with a real one
-        const cards = grid.children;
-        const idx = reasonsRevealed;
-        const newCard = document.createElement("div");
-        newCard.className = "p-5 bg-gradient-to-br from-romantic-50 to-pink-50 rounded-2xl border-2 border-romantic-300 text-center shadow-lg reason-anim";
-        newCard.innerHTML = `
+      // Build a single "revealed" card with the actual reason
+      function makeReasonRevealed(reasonIdx) {
+        const card = document.createElement("div");
+        card.className = "p-5 bg-gradient-to-br from-romantic-50 to-pink-50 rounded-2xl border-2 border-romantic-300 text-center shadow-lg reason-anim";
+        card.innerHTML = `
           <span class="text-3xl block mb-2">💝</span>
-          <p class="text-sm text-romantic-800 leading-relaxed font-medium">${reasonsList[idx]}</p>
+          <p class="text-sm text-romantic-800 leading-relaxed font-medium">${reasonsList[reasonIdx % reasonsList.length]}</p>
+          <p class="text-[10px] text-romantic-500 mt-2 font-semibold">Reason #${reasonIdx + 1}</p>
         `;
+        return card;
+      }
 
-        // Replace the first non-revealed card
-        let replaced = false;
-        for (let i = 0; i < cards.length; i++) {
-          if (cards[i].textContent.includes("Tap reveal below")) {
-            grid.replaceChild(newCard, cards[i]);
-            replaced = true;
-            break;
-          }
-        }
-        if (!replaced) {
-          grid.appendChild(newCard);
-        }
+      // Called when user taps a locked card
+      function revealReasonCard(cardEl, reasonIdx) {
+        if (cardEl.dataset.revealed === "1") return; // already opened
+        cardEl.dataset.revealed = "1";
+
+        const grid = document.getElementById("reasons-grid");
+        const newCard = makeReasonRevealed(reasonIdx);
+        grid.replaceChild(newCard, cardEl);
 
         reasonsRevealed++;
-        document.getElementById("reasons-progress").textContent = `${reasonsRevealed} / ${reasonsList.length} reasons revealed`;
-
-        // When all 6 slots filled, add a new slot for the next reveal
-        if (reasonsRevealed % 6 === 0 && reasonsRevealed < reasonsList.length) {
-          const placeholder = document.createElement("div");
-          placeholder.className = "p-5 bg-white/80 backdrop-blur rounded-2xl border-2 border-romantic-100 text-center text-stone-400 font-semibold text-sm shadow reason-anim";
-          placeholder.innerHTML = `<span class="text-3xl block mb-2">🎁</span>Card #${reasonsRevealed + 1} — Tap reveal below`;
-          grid.appendChild(placeholder);
-        }
+        document.getElementById("reasons-progress").textContent = `${reasonsRevealed} reasons opened 💝`;
 
         playChime(580);
         triggerConfettiBurst();
       }
 
+      // Initial grid: 6 tappable placeholders
+      function renderReasonsGrid() {
+        const grid = document.getElementById("reasons-grid");
+        grid.innerHTML = "";
+        for (let i = 0; i < 6; i++) {
+          grid.appendChild(makeReasonPlaceholder(i));
+        }
+      }
+
+      // "Reveal Another Reason" button → adds 6 more tappable placeholders
+      function revealNextReason() {
+        const grid = document.getElementById("reasons-grid");
+        const currentCount = grid.children.length;
+        for (let i = 0; i < 6; i++) {
+          grid.appendChild(makeReasonPlaceholder(currentCount + i));
+        }
+        playChime(580);
+        triggerConfettiBurst();
+      }
       /* ============================================
          11. TIMELINE (NEW)
          ============================================ */
