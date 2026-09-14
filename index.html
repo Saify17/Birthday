@@ -1,0 +1,2238 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#c9184a" />
+    <title>Happy Birthday, My Love! 💕 | S ❤ M</title>
+    <meta name="description" content="A private, hand-crafted digital world made for the most special soul. ✨" />
+    <meta property="og:title" content="Happy Birthday, My Love! 💕 | S ❤ M" />
+    <meta property="og:description" content="A private, hand-crafted digital world made for the most special soul." />
+    <meta property="og:type" content="website" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,600&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Wait for tailwind to be ready before configuring
+      function setupTailwindConfig() {
+        if (typeof tailwind === 'undefined') {
+          setTimeout(setupTailwindConfig, 50);
+          return;
+        }
+        tailwind.config = {
+          theme: {
+            extend: {
+              fontFamily: {
+                sans: ['Poppins', 'sans-serif'],
+                urdu: ['"Noto Nastaliq Urdu"', 'serif'],
+                handwriting: ['Caveat', 'cursive'],
+              },
+              colors: {
+                romantic: {
+                  50: '#fff0f3',
+                  100: '#ffe3e8',
+                  200: '#ffccd5',
+                  300: '#ffb3c1',
+                  400: '#ff758f',
+                  500: '#ff4d6d',
+                  600: '#c9184a',
+                  700: '#a4133c',
+                  800: '#800f2f',
+                  900: '#590d22',
+                }
+              },
+              animation: {
+                'float-slow': 'floatUp 12s linear infinite',
+                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'wiggle': 'wiggle 1s ease-in-out infinite',
+                'heartbeat': 'heartbeat 1.4s ease-in-out infinite',
+                'spin-slow': 'spin 12s linear infinite',
+                'bounce-soft': 'bounceSoft 2s infinite',
+                'shimmer': 'shimmer 2.4s linear infinite',
+                'glow': 'glow 2.5s ease-in-out infinite',
+                'drift': 'drift 18s linear infinite',
+                'magnetic': 'magnetic 2s ease-in-out infinite',
+              },
+              keyframes: {
+                wiggle: {
+                  '0%, 100%': { transform: 'rotate(-3deg)' },
+                  '50%': { transform: 'rotate(3deg)' },
+                },
+                heartbeat: {
+                  '0%, 100%': { transform: 'scale(1)' },
+                  '14%': { transform: 'scale(1.18)' },
+                  '28%': { transform: 'scale(1)' },
+                  '42%': { transform: 'scale(1.14)' },
+                  '70%': { transform: 'scale(1)' },
+                },
+                bounceSoft: {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-8px)' },
+                },
+                shimmer: {
+                  '0%': { backgroundPosition: '-200% center' },
+                  '100%': { backgroundPosition: '200% center' },
+                },
+                glow: {
+                  '0%, 100%': { boxShadow: '0 0 25px rgba(255,77,109,0.35)' },
+                  '50%': { boxShadow: '0 0 50px rgba(255,77,109,0.7)' },
+                },
+                drift: {
+                  '0%': { transform: 'translate(0,0) rotate(0deg)' },
+                  '100%': { transform: 'translate(40px,-60vh) rotate(360deg)' },
+                },
+                magnetic: {
+                  '0%, 100%': { transform: 'translateY(0) scale(1)' },
+                  '50%': { transform: 'translateY(-4px) scale(1.03)' },
+                }
+              }
+            }
+          }
+        }
+      }
+      setupTailwindConfig();
+    </script>
+
+    <!-- canvas-confetti CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <style>
+      /* ============================================
+         GLOBAL ANIMATIONS & ROMANTIC BACKGROUND
+         ============================================ */
+      html, body {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+      body {
+        background: linear-gradient(135deg, #fff0f3 0%, #ffe3e8 30%, #ffd6df 60%, #fff5f7 100%);
+        background-size: 400% 400%;
+        animation: gradientShift 18s ease infinite;
+        overflow-x: hidden;
+      }
+      @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      /* ============================================
+         FLOATING PARTICLES (HEARTS, PETALS, STARS)
+         ============================================ */
+      .floating-particle {
+        position: fixed;
+        bottom: -40px;
+        pointer-events: none;
+        z-index: 10;
+        animation: floatUp linear forwards;
+        filter: drop-shadow(0 4px 6px rgba(255,77,109,0.25));
+      }
+      @keyframes floatUp {
+        0% { transform: translateY(0) scale(0.6) rotate(0deg); opacity: 0; }
+        10% { opacity: 0.9; }
+        90% { opacity: 0.7; }
+        100% { transform: translateY(-115vh) scale(1.2) rotate(360deg); opacity: 0; }
+      }
+
+      /* Drifting petals (slow horizontal motion) */
+      .drift-petal {
+        position: fixed;
+        pointer-events: none;
+        z-index: 5;
+        opacity: 0.7;
+        animation: drift 18s linear infinite;
+      }
+
+      /* ============================================
+         LETTER BOUNCE ENTRANCE (Hero)
+         ============================================ */
+      .bounce-letter {
+        display: inline-block;
+        animation: letterDrop 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+      }
+      @keyframes letterDrop {
+        0% { opacity: 0; transform: translateY(-50px) scale(0.4); }
+        60% { transform: translateY(12px) scale(1.1); }
+        100% { opacity: 1; transform: translateY(0) scale(1); }
+      }
+
+      /* ============================================
+         SCROLL REVEAL ANIMATIONS
+         ============================================ */
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.4,0,0.2,1);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-scale {
+        opacity: 0;
+        transform: scale(0.85);
+        transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.4,0,0.2,1);
+      }
+      .reveal-scale.visible {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      /* ============================================
+         3D FLIP CARDS (TAREEF)
+         ============================================ */
+      .perspective-1000 { perspective: 1000px; }
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+        transform-style: preserve-3d;
+      }
+      .flip-card.flipped .flip-card-inner,
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+      .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 1rem;
+      }
+      .flip-card-back {
+        transform: rotateY(180deg);
+      }
+
+      /* New tareef slide-in */
+      @keyframes tareefSlideIn {
+        0% { opacity: 0; transform: translateY(30px) scale(0.85) rotate(-6deg); }
+        100% { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
+      }
+      .tareef-new {
+        animation: tareefSlideIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      }
+
+      /* ============================================
+         REALISTIC ENVELOPE ANIMATION
+         ============================================ */
+      .envelope-wrapper { perspective: 1200px; }
+      .envelope-flap {
+        transform-origin: top center;
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.2s 0.3s;
+      }
+      .envelope-open .envelope-flap {
+        transform: rotateX(180deg);
+        z-index: 5;
+      }
+      .letter-paper {
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.5s, opacity 0.5s ease 0.4s;
+      }
+      .envelope-open .letter-paper {
+        transform: translateY(-80px);
+        opacity: 1;
+        z-index: 20;
+      }
+
+      /* ============================================
+         CUSTOM SCROLLBAR
+         ============================================ */
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #ffe3e8; }
+      ::-webkit-scrollbar-thumb { background: #ff758f; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: #ff4d6d; }
+
+      /* ============================================
+         CURSOR HEART TRAIL
+         ============================================ */
+      .cursor-heart {
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        font-size: 16px;
+        animation: fadeAndRise 1s forwards ease-out;
+      }
+      @keyframes fadeAndRise {
+        0% { opacity: 1; transform: translate(-50%, -50%) scale(1) translateY(0); }
+        100% { opacity: 0; transform: translate(-50%, -50%) scale(1.6) translateY(-40px); }
+      }
+
+      /* ============================================
+         POLAROID TAPE CORNERS
+         ============================================ */
+      .tape-corner {
+        position: absolute;
+        width: 40px;
+        height: 16px;
+        background: rgba(255, 182, 193, 0.6);
+        backdrop-filter: blur(2px);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      }
+      .tape-top-left { top: -6px; left: -10px; transform: rotate(-35deg); }
+      .tape-top-right { top: -6px; right: -10px; transform: rotate(35deg); }
+
+      /* ============================================
+         MAGNETIC BUTTON EFFECT
+         ============================================ */
+      .magnetic-btn {
+        transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
+      }
+
+      /* ============================================
+         TIMELINE LINE PULSE
+         ============================================ */
+      @keyframes pulseDot {
+        0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,77,109,0.5); }
+        50% { transform: scale(1.15); box-shadow: 0 0 0 14px rgba(255,77,109,0); }
+      }
+      .timeline-dot { animation: pulseDot 2s infinite; }
+
+      /* ============================================
+         PARALLAX HERO IMAGE
+         ============================================ */
+      .parallax-wrap { perspective: 1000px; }
+      .parallax-img {
+        transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+        transform-style: preserve-3d;
+      }
+
+      /* ============================================
+         ROTATING REASON CARD
+         ============================================ */
+      @keyframes flipReason {
+        0% { opacity: 0; transform: rotateY(90deg) scale(0.8); }
+        100% { opacity: 1; transform: rotateY(0) scale(1); }
+      }
+      .reason-anim { animation: flipReason 0.7s cubic-bezier(0.4,0,0.2,1) both; }
+
+      /* ============================================
+         SHAYARI TYPEWRITER
+         ============================================ */
+      .typewriter-cursor::after {
+        content: '|';
+        margin-left: 2px;
+        animation: blink 0.8s infinite;
+        color: #c9184a;
+      }
+      @keyframes blink { 50% { opacity: 0; } }
+
+      /* ============================================
+         MUSIC VISUALIZER
+         ============================================ */
+      .music-bar {
+        display: inline-block;
+        width: 3px;
+        background: white;
+        border-radius: 2px;
+        animation: musicBar 0.9s ease-in-out infinite;
+      }
+      .music-bar:nth-child(2) { animation-delay: 0.2s; }
+      .music-bar:nth-child(3) { animation-delay: 0.4s; }
+      .music-bar:nth-child(4) { animation-delay: 0.1s; }
+      @keyframes musicBar {
+        0%, 100% { height: 8px; }
+        50% { height: 16px; }
+      }
+      .music-bar.paused { animation-play-state: paused; }
+
+      /* ============================================
+         SCREENSHOT BLOCK OVERLAY
+         ============================================ */
+      #screenshot-blocker {
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(135deg, #590d22, #c9184a);
+        z-index: 99999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        backdrop-filter: blur(20px);
+        color: white;
+        text-align: center;
+        padding: 2rem;
+      }
+      #screenshot-blocker.show { display: flex; }
+      #screenshot-blocker .lock-icon {
+        font-size: 6rem;
+        animation: heartbeat 1.4s ease-in-out infinite;
+      }
+
+      /* ============================================
+         WATERMARK OVERLAY (visible if user screenshots anyway)
+         ============================================ */
+      .secret-watermark {
+        position: fixed;
+        bottom: 10px;
+        right: 14px;
+        font-size: 10px;
+        color: rgba(255,77,109,0.18);
+        font-weight: 700;
+        letter-spacing: 2px;
+        pointer-events: none;
+        z-index: 1;
+        user-select: none;
+      }
+
+      /* ============================================
+         RESPONSIVE TWEAKS
+         ============================================ */
+      @media (max-width: 640px) {
+        .side-nav { display: none !important; }
+        .hero-title { font-size: 2.4rem !important; line-height: 1.1 !important; }
+      }
+      @media (max-width: 380px) {
+        .hero-title { font-size: 2rem !important; }
+      }
+
+      /* ============================================
+         MOBILE GESTURE PROTECTION (subtle)
+         ============================================ */
+      img { -webkit-user-drag: none; user-drag: none; }
+
+      /* ============================================
+         SHAYARI CARD DECORATIVE BORDER
+         ============================================ */
+      .ornament-border {
+        background:
+          radial-gradient(circle at 10% 20%, rgba(255,77,109,0.06) 0%, transparent 30%),
+          radial-gradient(circle at 90% 80%, rgba(255,77,109,0.06) 0%, transparent 30%),
+          linear-gradient(180deg, #fffdfa, #fff5f5);
+      }
+
+      /* ============================================
+         TIMELINE LINE
+         ============================================ */
+      .timeline-line::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(180deg, transparent, #ff4d6d, transparent);
+        transform: translateX(-50%);
+      }
+      @media (max-width: 768px) {
+        .timeline-line::before { left: 1.25rem; }
+      }
+
+      /* ============================================
+         QUIZ OPTION ANIMATION
+         ============================================ */
+      .quiz-option {
+        transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+        position: relative;
+        overflow: hidden;
+      }
+      .quiz-option::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(255,77,109,0.08);
+        border-radius: 50%;
+        transform: translate(-50%,-50%);
+        transition: width 0.5s ease, height 0.5s ease;
+      }
+      .quiz-option:hover::before { width: 400px; height: 400px; }
+
+      /* ============================================
+         GLOWING INPUT (Password)
+         ============================================ */
+      .glow-input:focus {
+        box-shadow: 0 0 0 4px rgba(255,77,109,0.15), 0 0 30px rgba(255,77,109,0.3);
+      }
+
+      /* ============================================
+         LOADING SPLASH
+         ============================================ */
+      #splash-screen {
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(135deg, #590d22, #c9184a, #ff4d6d);
+        z-index: 100000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 1.2rem;
+        transition: opacity 0.8s ease, visibility 0.8s ease;
+      }
+      #splash-screen.hide {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .splash-heart {
+        font-size: 5rem;
+        animation: heartbeat 1.2s ease-in-out infinite;
+      }
+      .splash-text {
+        color: white;
+        font-family: 'Caveat', cursive;
+        font-size: 1.6rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        animation: fadeAndRise 2s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body class="font-sans text-stone-800 selection:bg-romantic-400 selection:text-white relative min-h-screen">
+
+    <!-- ============================================
+         LOADING SPLASH
+         ============================================ -->
+    <div id="splash-screen">
+      <div class="splash-heart">💖</div>
+      <div class="splash-text">Loading our little world...</div>
+    </div>
+
+    <!-- ============================================
+         SCREENSHOT / SCREEN RECORD BLOCKER
+         ============================================ -->
+    <div id="screenshot-blocker">
+      <div class="lock-icon">🔒</div>
+      <h2 class="text-3xl font-extrabold mt-4 mb-2">Screenshots are private here 💕</h2>
+      <p class="text-pink-100 max-w-md leading-relaxed">
+        This moment is just between <span class="font-bold">S</span> and <span class="font-bold">M</span>. 
+        Please capture it in your heart, not on screen 🌸
+      </p>
+    </div>
+
+    <!-- Subtle watermark -->
+    <div class="secret-watermark">S ❤ M • PRIVATE • 15.09</div>
+
+    <!-- ============================================
+         FLOATING PARTICLES CONTAINER
+         ============================================ -->
+    <div id="particles-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
+    <div id="petals-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
+
+    <!-- ============================================
+         PASSWORD GATE (fixed: no example, uses S & M, poetic clue)
+         ============================================ -->
+    <div id="password-gate" class="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-romantic-900/95 via-romantic-800/95 to-romantic-950 backdrop-blur-md px-4 transition-all duration-700">
+      <div class="relative w-full max-w-md p-8 bg-white/95 rounded-3xl shadow-2xl border-4 border-romantic-200 text-center transform transition-all duration-300 reveal-scale visible">
+
+        <!-- Pulsing lock badge -->
+        <div class="w-20 h-20 mx-auto -mt-16 mb-4 rounded-full bg-gradient-to-tr from-romantic-500 to-romantic-400 text-white flex items-center justify-center text-3xl shadow-lg border-4 border-white animate-glow">
+          🔐
+        </div>
+
+        <span class="inline-block px-3 py-1 bg-romantic-100 text-romantic-700 text-xs font-bold rounded-full uppercase tracking-wider mb-2">
+          Private Access Only
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-romantic-900 mb-2 font-handwriting">
+          A Little World Made Just for Us 💕
+        </h2>
+        <p class="text-sm text-stone-600 mb-6 leading-relaxed">
+          Crafted with love for the one who makes my heartbeat skip. 
+          <br/>
+          Whisper our <span class="font-bold text-romantic-700">secret code</span> to step inside ✨
+        </p>
+
+        <form id="password-form" class="space-y-4" onsubmit="handlePasswordSubmit(event)">
+          <div class="relative">
+            <input
+              type="password"
+              id="password-input"
+              placeholder="Type the code we share..."
+              autocomplete="current-password"
+              autocorrect="off"
+              autocapitalize="off"
+              spellcheck="false"
+              class="glow-input w-full px-5 py-3.5 pl-12 rounded-2xl border-2 border-romantic-200 focus:border-romantic-500 outline-none text-stone-800 font-medium transition text-center sm:text-left tracking-wider"
+            />
+            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-xl pointer-events-none">💖</span>
+            <button
+              type="button"
+              onclick="togglePasswordVisibility()"
+              class="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-romantic-600 font-semibold hover:underline"
+              id="show-pass-btn"
+            >
+              Show
+            </button>
+          </div>
+
+          <div id="password-error" class="hidden text-xs font-semibold text-red-600 bg-red-50 py-2 px-3 rounded-xl border border-red-200 animate-wiggle">
+            That doesn't seem right... try once more, my love 🤫
+          </div>
+
+          <button
+            type="submit"
+            id="unlock-btn"
+            class="magnetic-btn w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-romantic-500 via-romantic-600 to-romantic-500 text-white font-bold text-lg shadow-lg hover:shadow-romantic-500/30 hover:scale-[1.02] active:scale-[0.98] transition duration-200 flex items-center justify-center gap-2 animate-glow"
+          >
+            <span>Step Inside My Heart</span>
+            <span class="text-xl">✨</span>
+          </button>
+        </form>
+
+        <div class="mt-5 pt-4 border-t border-romantic-100 flex items-center justify-between text-xs text-stone-500">
+          <span>Made with ❤ • S & M</span>
+          <button
+            onclick="givePasswordClue()"
+            class="text-romantic-600 hover:text-romantic-800 underline font-medium"
+          >
+            Need a clue?
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================
+         FLOATING CONTROLS HEADER
+         ============================================ -->
+    <header class="fixed top-3 left-3 right-3 sm:left-6 sm:right-6 z-40 flex items-center justify-between pointer-events-none gap-2">
+      <!-- S + M Sticker Badge -->
+      <div class="pointer-events-auto group">
+        <a href="#hero" class="flex items-center gap-2 px-3 py-2 sm:px-4 bg-white/90 backdrop-blur-md rounded-full shadow-md border border-romantic-200 hover:border-romantic-400 hover:shadow-lg transition transform hover:-rotate-3 active:scale-95 duration-300">
+          <span class="w-7 h-7 rounded-full bg-gradient-to-tr from-romantic-500 to-rose-400 text-white text-xs font-black flex items-center justify-center animate-pulse-slow">S</span>
+          <span class="text-romantic-600 animate-heartbeat text-sm">❤</span>
+          <span class="w-7 h-7 rounded-full bg-gradient-to-tr from-romantic-400 to-pink-400 text-white text-xs font-black flex items-center justify-center">M</span>
+          <span class="hidden sm:inline text-xs font-bold text-romantic-900 ml-1">Our Little World</span>
+        </a>
+      </div>
+
+      <!-- Right Controls -->
+      <div class="pointer-events-auto flex items-center gap-2">
+        <!-- Music Toggle -->
+        <button
+          onclick="toggleChimeSound()"
+          id="sound-btn"
+          title="Toggle romantic music"
+          class="px-3 py-2 bg-white/90 backdrop-blur-md rounded-full text-xs font-semibold text-romantic-700 shadow-md border border-romantic-200 hover:bg-romantic-50 hover:border-romantic-400 transition flex items-center gap-1.5"
+        >
+          <span id="sound-icon">🎵</span>
+          <span class="hidden md:inline">Music</span>
+          <span id="music-bars" class="flex items-end gap-0.5 h-4">
+            <span class="music-bar"></span><span class="music-bar"></span><span class="music-bar"></span><span class="music-bar"></span>
+          </span>
+        </button>
+
+        <!-- Cursor heart trail toggle -->
+        <button
+          onclick="toggleCursorHearts()"
+          id="cursor-toggle-btn"
+          title="Toggle heart cursor trail"
+          class="px-3 py-2 bg-white/90 backdrop-blur-md rounded-full text-xs font-semibold text-romantic-700 shadow-md border border-romantic-200 hover:bg-romantic-50 hover:border-romantic-400 transition flex items-center gap-1.5"
+        >
+          <span>✨</span>
+          <span class="hidden md:inline">Trail</span>
+          <span id="trail-status" class="w-2 h-2 rounded-full bg-green-500 inline-block"></span>
+        </button>
+
+        <!-- Lock app -->
+        <button
+          onclick="lockApp()"
+          title="Lock this world"
+          class="px-3 py-2 bg-white/90 backdrop-blur-md rounded-full text-xs font-semibold text-romantic-700 shadow-md border border-romantic-200 hover:bg-romantic-50 hover:border-romantic-400 transition flex items-center gap-1.5"
+        >
+          🔒
+          <span class="hidden md:inline">Lock</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ============================================
+         SIDE NAVIGATION DOTS
+         ============================================ -->
+    <nav class="side-nav fixed right-3 sm:right-5 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-3 py-4 px-2.5 bg-white/80 backdrop-blur-md rounded-full border border-romantic-200 shadow-xl">
+      <a href="#hero" class="nav-dot group relative w-3.5 h-3.5 rounded-full bg-romantic-300 transition-all hover:scale-125 hover:bg-romantic-600" data-section="hero"><span class="absolute right-7 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-md bg-romantic-800 text-white text-[11px] font-semibold tracking-wide whitespace-nowrap opacity-0 group-hover:opacity-100 transition shadow pointer-events-none">Home</span></a>
+      <a href="#gallery" class="nav-dot group relative w-3.5 h-3.5 rounded-full bg-romantic-300 transition-all hover:scale-125 hover:bg-romantic-600" data-section="gallery"><span class="absolute right-7 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-md bg-romantic-800 text-white text-[11px] font-semibold tracking-wide whitespace-nowrap opacity-0 group-hover:opacity-100 transition shadow pointer-events-none">Our Scrapbook</span></a>
+      <a href="#tareef" class="nav-dot group relative w-3.5 h-3.5 rounded-full bg-romantic-300 transition-all hover:scale-125 hover:bg-romantic-600" data-section="tareef"><span class="absolute right-7 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-md bg-romantic-800 text-white text-[11px] font-semibold tracking-wide whitespace-nowrap opacity-0 group-hover:opacity-100 transition shadow pointer-events-none">Tareef Wall</span></a>
+      <a href="#shayari" class="nav-dot group relative w-3.5 h-3.5 rounded-full bg-romantic-300 transition-all hover:scale-125 hover:bg-romantic-600" data-section="shayari"><span class="absolute right-7 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-md bg-romantic-800 text-white text-[11px] font-semibold tracking-wide whitespace-nowrap opacity-0 group-hover:opacity-100 transition shadow pointer-events-none">Shayari</span></a>
+      <a href="#reasons" class="nav-dot group relative w-3.5 h-3.5 rounded-full bg-romantic-300 transition-all hover:scale-125 hover:bg-romantic-600" data-section="reasons"><span class="absolute right-7 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-md bg-romantic-800 text-white text-[11px] font-semibold tracking-wide whitespace-nowrap opacity-0 group-hover:opacity-100 transition shadow pointer-events-none">Why I Love You</span></a>
+      <a href="#timeline" class="nav-dot group relative w-3.5 h-3.5 rounded-full bg-romantic-300 transition-all hover:scale-125 hover:bg-romantic-600" data-section="timeline"><span class="absolute right-7 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-md bg-romantic-800 text-white text-[11px] font-semibold tracking-wide whitespace-nowrap opacity-0 group-hover:opacity-100 transition shadow pointer-events-none">Our Journey</span></a>
+      <a href="#funny-facts" class="nav-dot group relative w-3.5 h-3.5 rounded-full bg-romantic-300 transition-all hover:scale-125 hover:bg-romantic-600" data-section="funny-facts"><span class="absolute right-7 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-md bg-romantic-800 text-white text-[11px] font-semibold tracking-wide whitespace-nowrap opacity-0 group-hover:opacity-100 transition shadow pointer-events-none">Funny Facts</span></a>
+      <a href="#quiz" class="nav-dot group relative w-3.5 h-3.5 rounded-full bg-romantic-300 transition-all hover:scale-125 hover:bg-romantic-600" data-section="quiz"><span class="absolute right-7 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-md bg-romantic-800 text-white text-[11px] font-semibold tracking-wide whitespace-nowrap opacity-0 group-hover:opacity-100 transition shadow pointer-events-none">Couples Quiz</span></a>
+      <a href="#love-letter" class="nav-dot group relative w-3.5 h-3.5 rounded-full bg-romantic-300 transition-all hover:scale-125 hover:bg-romantic-600" data-section="love-letter"><span class="absolute right-7 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-md bg-romantic-800 text-white text-[11px] font-semibold tracking-wide whitespace-nowrap opacity-0 group-hover:opacity-100 transition shadow pointer-events-none">Secret Letter</span></a>
+      <a href="#message-box" class="nav-dot group relative w-3.5 h-3.5 rounded-full bg-romantic-300 transition-all hover:scale-125 hover:bg-romantic-600" data-section="message-box"><span class="absolute right-7 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-md bg-romantic-800 text-white text-[11px] font-semibold tracking-wide whitespace-nowrap opacity-0 group-hover:opacity-100 transition shadow pointer-events-none">Leave Love</span></a>
+    </nav>
+
+    <!-- ============================================
+         MAIN CONTENT
+         ============================================ -->
+    <main class="relative z-10">
+
+      <!-- ============================================
+           SECTION 1: HERO (No time counter, big couple image)
+           ============================================ -->
+      <section id="hero" class="min-h-screen flex flex-col items-center justify-center pt-24 pb-16 px-4 text-center relative overflow-hidden">
+        <!-- Floating Stickers -->
+        <div class="absolute top-20 left-6 sm:left-16 hidden sm:flex items-center gap-2 p-2.5 bg-white/80 backdrop-blur rounded-2xl shadow-md border border-pink-200 rotate-[-8deg] hover:rotate-0 transition duration-300">
+          <span class="text-2xl">🧸</span>
+          <span class="text-xs font-bold text-romantic-800">Forever Favourite</span>
+        </div>
+        <div class="absolute top-24 right-6 sm:right-16 hidden sm:flex items-center gap-2 p-2.5 bg-white/80 backdrop-blur rounded-2xl shadow-md border border-pink-200 rotate-[8deg] hover:rotate-0 transition duration-300">
+          <span class="text-2xl">👑</span>
+          <span class="text-xs font-bold text-romantic-800">Birthday Queen</span>
+        </div>
+
+        <div class="max-w-3xl mx-auto space-y-6">
+          <!-- Top Tag -->
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-romantic-100 to-pink-100 border border-romantic-300 text-romantic-700 text-sm font-semibold tracking-wide shadow-sm reveal">
+            <span class="animate-spin-slow">✨</span>
+            <span>It's Your Day Today 💕</span>
+            <span class="animate-spin-slow">✨</span>
+          </div>
+
+          <!-- Animated Letter-by-Letter Headline -->
+          <h1 id="animated-hero-title" class="hero-title text-4xl sm:text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-romantic-700 via-romantic-500 to-rose-600 tracking-tight leading-tight py-2" style="background-size:200% auto; animation: shimmer 4s linear infinite;">
+            Happy Birthday M! 🎂
+          </h1>
+
+          <p class="text-lg sm:text-2xl font-handwriting text-romantic-700 max-w-xl mx-auto leading-relaxed reveal">
+            "To the prettiest soul who makes every beat of my heart sound like music... today is all about you, my love."
+          </p>
+
+          <!-- Big Couple Image (replaces time counter) -->
+          <div class="relative max-w-md sm:max-w-lg mx-auto my-6 parallax-wrap reveal-scale">
+            <div class="relative p-3 bg-white rounded-3xl shadow-2xl border-4 border-romantic-200 transform hover:scale-[1.02] transition duration-500 group ">
+              <div class="relative rounded-2xl overflow-hidden bg-romantic-50 aspect-[4/5] sm:aspect-square flex items-center justify-center">
+                <img
+                  id="hero-gif"
+                  src="https://images.unsplash.com/photo-1511405889574-b01de1da5441?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y291cGxlJTIwZGlzdGFuY2V8ZW58MHx8MHx8fDA%3D"
+                  alt="Our love story"
+                  class="parallax-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  referrerpolicy="no-referrer"
+                />
+                <!-- Gradient overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-romantic-900/70 via-transparent to-transparent flex flex-col justify-end p-4 sm:p-6 text-left">
+                  <span class="text-[10px] sm:text-xs font-bold text-pink-200 tracking-widest uppercase">S ❤ M</span>
+                  <p class="text-white font-semibold text-base sm:text-lg">19 Years of Pure Magic ✨</p>
+                  <p class="text-pink-100 text-xs mt-0.5">— and a lifetime more to go</p>
+                </div>
+              </div>
+              <!-- Tape stickers -->
+              <div class="tape-corner tape-top-left"></div>
+              <div class="tape-corner tape-top-right"></div>
+            </div>
+
+            <!-- Floating heart stickers around hero image -->
+            <div class="absolute -top-4 -left-4 text-3xl animate-bounce-soft">💖</div>
+            <div class="absolute -bottom-4 -right-4 text-3xl animate-bounce-soft" style="animation-delay:.5s">✨</div>
+            <div class="absolute top-1/2 -right-6 text-2xl animate-bounce-soft hidden sm:block" style="animation-delay:1s">🌸</div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center justify-center gap-4 pt-2 reveal">
+            <button
+              onclick="triggerConfettiBurst()"
+              class="magnetic-btn px-6 py-3.5 rounded-full bg-gradient-to-r from-romantic-500 to-rose-500 text-white font-bold shadow-lg shadow-romantic-500/25 hover:shadow-romantic-500/40 hover:scale-105 active:scale-95 transition flex items-center gap-2 animate-glow"
+            >
+              <span>Throw Confetti!</span>
+              <span class="text-xl">🎉</span>
+            </button>
+            <a
+              href="#gallery"
+              class="magnetic-btn px-6 py-3.5 rounded-full bg-white/90 text-romantic-700 font-bold border border-romantic-200 shadow-md hover:bg-romantic-50 hover:scale-105 active:scale-95 transition flex items-center gap-2"
+            >
+              <span>Our Memories</span>
+              <span>↓</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 text-romantic-400 animate-bounce">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 2: COUPLE SCRAPBOOK GALLERY
+           ============================================ -->
+      <section id="gallery" class="py-20 px-4 max-w-6xl mx-auto scroll-mt-12">
+        <div class="text-center mb-12 reveal">
+          <div class="inline-block p-1.5 px-4 bg-romantic-100 text-romantic-700 text-xs font-bold rounded-full uppercase tracking-wider mb-2">
+            Captured Moments
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-romantic-900 mb-2">
+            Our Little Scrapbook of Love 📸
+          </h2>
+          <p class="text-stone-600 max-w-lg mx-auto text-sm sm:text-base">
+            Polaroids frozen in time. Click any photo to enlarge and read the sweet memory note!
+          </p>
+        </div>
+
+        <!-- Scrapbook Polaroid Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8" id="gallery-grid">
+          <!-- Cards injected by JS with stagger reveal -->
+        </div>
+      </section>
+
+      <!-- Lightbox Modal -->
+      <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm hidden items-center justify-center p-4 transition-opacity duration-300" onclick="closeLightbox(event)">
+        <div class="relative max-w-2xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl p-4 sm:p-6" onclick="event.stopPropagation()">
+          <button onclick="closeLightboxDirect()" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-romantic-100 text-romantic-700 flex items-center justify-center font-bold hover:bg-romantic-200 transition">✕</button>
+          <div class="rounded-2xl overflow-hidden max-h-[65vh] bg-stone-100 flex items-center justify-center">
+            <img id="lightbox-img" src="" alt="Enlarged Memory" class="w-full h-full object-contain max-h-[65vh]" />
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div>
+              <h3 id="lightbox-title" class="text-xl font-bold text-romantic-900 font-handwriting text-2xl">Memory</h3>
+              <p id="lightbox-desc" class="text-sm text-stone-600">Caption here</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <button onclick="prevLightbox()" class="p-2 rounded-xl bg-romantic-100 text-romantic-700 hover:bg-romantic-200 transition">◀</button>
+              <button onclick="nextLightbox()" class="p-2 rounded-xl bg-romantic-100 text-romantic-700 hover:bg-romantic-200 transition">▶</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================
+           SECTION 3: TAREEF WALL (Fixed 'aik aur tareef')
+           ============================================ -->
+      <section id="tareef" class="py-20 px-4 max-w-5xl mx-auto scroll-mt-12">
+        <div class="text-center mb-10 reveal">
+          <div class="inline-block p-1.5 px-4 bg-romantic-100 text-romantic-700 text-xs font-bold rounded-full uppercase tracking-wider mb-2">
+            Praise & Love
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-romantic-900 mb-2">
+            Tareef Wall: Reasons You're Irreplaceable 💖
+          </h2>
+          <p class="text-stone-600 max-w-md mx-auto text-sm sm:text-base">
+            Hover or tap each card to flip and reveal a fresh tareef from my heart ✨
+          </p>
+        </div>
+
+        <!-- Tareef Flip Cards Grid -->
+        <div id="tareef-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Cards populated and managed by JS with smooth flip -->
+        </div>
+
+        <!-- "Ek Aur Tareef" Button — FIXED: appends single new card smoothly, no jump to old -->
+        <div class="mt-10 text-center reveal">
+          <button
+            onclick="addNewTareefCard()"
+            id="aur-tareef-btn"
+            class="magnetic-btn px-8 py-4 bg-gradient-to-r from-romantic-500 via-rose-500 to-romantic-600 text-white font-bold rounded-full shadow-lg hover:shadow-romantic-400/40 hover:scale-105 active:scale-95 transition flex items-center gap-2 mx-auto animate-glow"
+          >
+            <span>Ek Aur Tareef!</span>
+            <span class="text-xl">🌸</span>
+          </button>
+          <p class="text-xs text-stone-500 mt-2 italic">Tap and a brand-new tareef will appear right here 💌</p>
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 4: URDU SHAYARI CORNER
+           ============================================ -->
+      <section id="shayari" class="py-20 px-4 max-w-4xl mx-auto scroll-mt-12">
+        <div class="text-center mb-10 reveal">
+          <div class="inline-block p-1.5 px-4 bg-romantic-100 text-romantic-700 text-xs font-bold rounded-full uppercase tracking-wider mb-2">
+            Dastoor-e-Dil
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-romantic-900 mb-2">
+            Urdu Love Poetry Corner 📜
+          </h2>
+          <p class="text-stone-600 max-w-md mx-auto text-sm sm:text-base">
+            A few couplets from my heart, in timeless Urdu words.
+          </p>
+        </div>
+
+        <div class="relative ornament-border rounded-3xl p-6 sm:p-12 shadow-2xl border-2 border-romantic-200 max-w-2xl mx-auto overflow-hidden reveal-scale">
+          <!-- Top decorative border -->
+          <div class="absolute top-0 left-0 right-0 h-3 bg-gradient-to-r from-romantic-300 via-romantic-500 to-romantic-300"></div>
+          <div class="absolute bottom-0 left-0 right-0 h-3 bg-gradient-to-r from-romantic-300 via-romantic-500 to-romantic-300"></div>
+
+          <!-- Corner ornaments -->
+          <div class="absolute top-4 left-4 text-romantic-300 text-xl">❦</div>
+          <div class="absolute top-4 right-4 text-romantic-300 text-xl">❦</div>
+          <div class="absolute bottom-4 left-4 text-romantic-300 text-xl rotate-180">❦</div>
+          <div class="absolute bottom-4 right-4 text-romantic-300 text-xl rotate-180">❦</div>
+
+          <div class="flex items-center justify-between mb-8 pb-4 border-b border-romantic-100 text-xs text-romantic-600 font-semibold tracking-widest uppercase">
+            <span>Kalam-e-S</span>
+            <span id="shayari-counter" class="px-3 py-1 bg-romantic-100 rounded-full">Couplet 1 of 7</span>
+            <span>Baraaye M</span>
+          </div>
+
+          <div class="min-h-[200px] flex flex-col items-center justify-center text-center space-y-4 px-2 transition-all duration-500" id="shayari-container">
+            <p id="urdu-original-text" class="font-urdu text-2xl sm:text-3xl text-romantic-900 leading-loose py-2">
+              "تمہاری مسکراہٹ میں وہ سکون ہے، جو کسی شاعر کے لفظوں میں بھی نہیں ملتا"
+            </p>
+            <p id="urdu-roman-text" class="text-base sm:text-lg text-romantic-700 font-medium italic">
+              "Tumhari muskurahat mein woh sukoon hai, jo kisi shayar ke lafzon mein bhi nahi milta."
+            </p>
+            <p id="urdu-english-text" class="text-xs sm:text-sm text-stone-500 max-w-md">
+              Your smile holds a serenity that no poet could ever capture in words.
+            </p>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-romantic-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2 text-romantic-500 text-sm">
+              <span class="text-lg">💌</span>
+              <span class="font-handwriting text-lg font-bold">Written with all my heart</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <button
+                onclick="prevShayari()"
+                class="px-4 py-2.5 rounded-full bg-romantic-100 text-romantic-700 font-bold text-sm hover:bg-romantic-200 transition active:scale-95"
+              >
+                ← Prev
+              </button>
+              <button
+                onclick="nextShayari()"
+                class="px-6 py-2.5 rounded-full bg-romantic-600 hover:bg-romantic-700 text-white font-bold text-sm shadow-md hover:shadow-lg transition flex items-center gap-2 active:scale-95"
+              >
+                <span>Next / اگلی</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 5: REASONS I LOVE YOU (NEW!)
+           ============================================ -->
+      <section id="reasons" class="py-20 px-4 max-w-5xl mx-auto scroll-mt-12">
+        <div class="text-center mb-10 reveal">
+          <div class="inline-block p-1.5 px-4 bg-romantic-100 text-romantic-700 text-xs font-bold rounded-full uppercase tracking-wider mb-2">
+            The Little Things
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-romantic-900 mb-2">
+            100 Reasons My Heart Skips For You 💘
+          </h2>
+          <p class="text-stone-600 max-w-md mx-auto text-sm sm:text-base">
+            Tap a card to reveal a reason — each one is a tiny piece of why I love you.
+          </p>
+        </div>
+
+        <div id="reasons-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Injected by JS -->
+        </div>
+
+        <div class="mt-8 text-center reveal">
+          <button
+            onclick="revealNextReason()"
+            class="magnetic-btn px-8 py-4 bg-gradient-to-r from-romantic-500 via-rose-500 to-romantic-600 text-white font-bold rounded-full shadow-lg hover:shadow-romantic-400/40 hover:scale-105 active:scale-95 transition flex items-center gap-2 mx-auto"
+          >
+            <span id="reasons-btn-text">Reveal Another Reason</span>
+            <span class="text-xl">💝</span>
+          </button>
+          <p class="text-xs text-stone-500 mt-2 italic" id="reasons-progress">0 / 100 reasons revealed</p>
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 6: OUR TIMELINE (NEW!)
+           ============================================ -->
+      <section id="timeline" class="py-20 px-4 max-w-4xl mx-auto scroll-mt-12">
+        <div class="text-center mb-10 reveal">
+          <div class="inline-block p-1.5 px-4 bg-romantic-100 text-romantic-700 text-xs font-bold rounded-full uppercase tracking-wider mb-2">
+            Our Journey
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-romantic-900 mb-2">
+            Milestones of Us 📅
+          </h2>
+          <p class="text-stone-600 max-w-md mx-auto text-sm sm:text-base">
+            Every date that mattered, every moment I'll never forget.
+          </p>
+        </div>
+
+        <div id="timeline-list" class="relative timeline-line">
+          <!-- Injected by JS -->
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 7: FUNNY FACTS (Roman Urdu poetic rewrite)
+           ============================================ -->
+      <section id="funny-facts" class="py-20 px-4 max-w-5xl mx-auto scroll-mt-12">
+        <div class="text-center mb-12 reveal">
+          <div class="inline-block p-1.5 px-4 bg-romantic-100 text-romantic-700 text-xs font-bold rounded-full uppercase tracking-wider mb-2">
+            The Real Us
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-romantic-900 mb-2">
+            Fun Facts About Us 😂❤
+          </h2>
+          <p class="text-stone-600 max-w-md mx-auto text-sm sm:text-base">
+            All the chaotic, cute and beautifully unhinged things that make us perfect.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="funny-facts-grid">
+          <!-- Injected by JS -->
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 8: COUPLES QUIZ
+           ============================================ -->
+      <section id="quiz" class="py-20 px-4 max-w-3xl mx-auto scroll-mt-12">
+        <div class="text-center mb-10 reveal">
+          <div class="inline-block p-1.5 px-4 bg-romantic-100 text-romantic-700 text-xs font-bold rounded-full uppercase tracking-wider mb-2">
+            Couple Trivia
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-romantic-900 mb-2">
+            How Well Do You Know Us? 🎯
+          </h2>
+          <p class="text-stone-600 max-w-md mx-auto text-sm sm:text-base">
+            6 questions to test your memory of us — no pressure, but the score is being watched 😉.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-2xl border-2 border-romantic-200 p-6 sm:p-10 relative overflow-hidden reveal-scale">
+          <!-- Progress Bar Header -->
+          <div class="mb-6">
+            <div class="flex items-center justify-between text-xs font-bold text-romantic-800 mb-2">
+              <span id="quiz-question-number">Question 1 of 6</span>
+              <span id="quiz-score-live">Score: 0</span>
+            </div>
+            <div class="w-full h-3 bg-romantic-100 rounded-full overflow-hidden">
+              <div id="quiz-progress-bar" class="h-full bg-gradient-to-r from-romantic-400 to-romantic-600 transition-all duration-500 rounded-full" style="width: 16.6%;"></div>
+            </div>
+          </div>
+
+          <div id="quiz-active-view" class="space-y-6">
+            <h3 id="quiz-question-title" class="text-xl sm:text-2xl font-extrabold text-stone-800 leading-snug">
+              Loading question...
+            </h3>
+            <div id="quiz-options-container" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5"></div>
+            <div id="quiz-feedback" class="hidden p-4 rounded-2xl text-sm font-semibold text-center transition-all animate-bounce-soft"></div>
+          </div>
+
+          <div id="quiz-result-view" class="hidden text-center py-6 space-y-6">
+            <div id="quiz-result-emoji" class="text-6xl animate-bounce-soft">🏆</div>
+            <h3 id="quiz-result-title" class="text-2xl sm:text-3xl font-black text-romantic-900">Quiz Completed!</h3>
+            <p id="quiz-result-desc" class="text-stone-600 text-sm sm:text-base max-w-md mx-auto leading-relaxed"></p>
+            <div class="p-4 bg-romantic-50 rounded-2xl inline-block border border-romantic-200">
+              <span class="text-sm font-semibold text-romantic-600">Final Score: </span>
+              <span id="quiz-final-score" class="text-2xl font-black text-romantic-700">6/6</span>
+            </div>
+            <div>
+              <button onclick="restartQuiz()" class="px-8 py-3.5 rounded-full bg-gradient-to-r from-romantic-500 to-rose-500 text-white font-bold shadow-lg hover:scale-105 active:scale-95 transition">Play Again 🔄</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 9: LOVE LETTER REVEAL
+           ============================================ -->
+      <section id="love-letter" class="py-20 px-4 max-w-4xl mx-auto scroll-mt-12">
+        <div class="text-center mb-12 reveal">
+          <div class="inline-block p-1.5 px-4 bg-romantic-100 text-romantic-700 text-xs font-bold rounded-full uppercase tracking-wider mb-2">
+            Sealed with Love
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-romantic-900 mb-2">
+            A Letter From My Heart 💌
+          </h2>
+          <p class="text-stone-600 max-w-md mx-auto text-sm sm:text-base">
+            Tap the wax seal to break it open and read every word I've written for you.
+          </p>
+        </div>
+
+        <div class="envelope-wrapper max-w-lg mx-auto relative flex flex-col items-center reveal-scale">
+          <div id="envelope-box" class="relative w-full aspect-[4/3] bg-gradient-to-br from-romantic-200 via-romantic-300 to-pink-300 rounded-3xl shadow-2xl border-4 border-white cursor-pointer overflow-hidden group transition-transform duration-500 hover:scale-[1.02]" onclick="toggleEnvelope()">
+            <div id="envelope-flap" class="envelope-flap absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-romantic-400 to-romantic-300 z-10 border-b-2 border-white/50 shadow-md"></div>
+            <div id="wax-seal" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-16 h-16 rounded-full bg-gradient-to-tr from-rose-700 via-romantic-600 to-rose-500 shadow-xl border-2 border-white flex flex-col items-center justify-center text-white group-hover:scale-110 transition duration-300 animate-glow">
+              <span class="text-xs font-black tracking-tighter">S ❤ M</span>
+              <span class="text-[9px] opacity-80">OPEN</span>
+            </div>
+            <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-romantic-300 to-romantic-200 z-15 border-t border-white/30 flex items-center justify-center">
+              <span class="text-xs font-bold text-romantic-800/60 uppercase tracking-widest">For You, My Love • Tap to Read</span>
+            </div>
+          </div>
+
+          <div id="letter-content" class="hidden w-full mt-6 bg-[#fffbf2] rounded-3xl shadow-2xl p-6 sm:p-10 border-2 border-romantic-200 text-stone-800 space-y-4 animate-fade-in relative">
+            <div class="flex items-center justify-between pb-3 border-b border-romantic-200">
+              <span class="font-handwriting text-2xl text-romantic-600 font-bold">My Dearest,</span>
+              <span class="text-xs text-stone-500 font-mono">15 September</span>
+            </div>
+
+            <div id="typewriter-letter-body" class="space-y-4 text-sm sm:text-base leading-relaxed text-stone-700 font-sans">
+              <p>Happy 19th Birthday, my love! 🎂 As you blow out your candles today, I want you to know how grateful I am to have you in my life.</p>
+              <p>Watching you grow into the incredible, kind, funny and radiant person you are is one of my greatest joys. You have this rare ability to turn ordinary days into cherished memories simply by being yourself.</p>
+              <p>Whenever you smile, the whole world feels a little softer. Even during our silly debates and playful arguments, there is never a single second where my heart doesn't choose you all over again.</p>
+              <p>May this 19th year bring you every bit of happiness, success and dream that your heart desires. I promise to always stand by you, cheer the loudest for you, and love you endlessly — today, tomorrow, and every single day after.</p>
+              <p class="font-handwriting text-lg text-romantic-700">Forever and completely yours 💕</p>
+            </div>
+
+            <div class="pt-6 border-t border-romantic-200 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-stone-500 block">With all my love,</span>
+                <span class="font-handwriting text-3xl font-bold text-romantic-700">Yours, S ❤</span>
+              </div>
+              <button onclick="foldEnvelope()" class="text-xs font-semibold px-4 py-2 bg-romantic-100 text-romantic-700 rounded-xl hover:bg-romantic-200 transition">Close Letter ✉️</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 10: LEAVE ME A MESSAGE
+           ============================================ -->
+      <section id="message-box" class="py-20 px-4 max-w-2xl mx-auto scroll-mt-12">
+        <div class="bg-white rounded-3xl shadow-2xl border-2 border-romantic-200 p-6 sm:p-10 text-center relative overflow-hidden reveal">
+          <div class="inline-block p-1.5 px-4 bg-romantic-100 text-romantic-700 text-xs font-bold rounded-full uppercase tracking-wider mb-2">Sweet Reply</div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-romantic-900 mb-2">Leave Me a Little Love 💌</h2>
+          <p class="text-stone-600 text-sm mb-6 leading-relaxed">How are you feeling right now? Type whatever is in your heart — this is your private safe space.</p>
+
+          <div class="flex flex-wrap items-center justify-center gap-2 mb-4">
+            <button type="button" onclick="selectMood('Feeling Loved 🥰')" class="mood-pill px-3 py-1.5 rounded-full text-xs font-semibold border border-romantic-200 bg-romantic-50 hover:bg-romantic-500 hover:text-white transition">🥰 Feeling Loved</button>
+            <button type="button" onclick="selectMood('Smiling Ear to Ear 😁')" class="mood-pill px-3 py-1.5 rounded-full text-xs font-semibold border border-romantic-200 bg-romantic-50 hover:bg-romantic-500 hover:text-white transition">😁 Smiling Ear to Ear</button>
+            <button type="button" onclick="selectMood('Tears of Joy 🥹')" class="mood-pill px-3 py-1.5 rounded-full text-xs font-semibold border border-romantic-200 bg-romantic-50 hover:bg-romantic-500 hover:text-white transition">🥹 Tears of Joy</button>
+            <button type="button" onclick="selectMood('Missing You 💖')" class="mood-pill px-3 py-1.5 rounded-full text-xs font-semibold border border-romantic-200 bg-romantic-50 hover:bg-romantic-500 hover:text-white transition">💖 Missing You</button>
+          </div>
+
+          <form onsubmit="handleMessageSubmit(event)" class="space-y-4 text-left">
+            <div class="relative">
+              <textarea id="user-love-note" rows="4" placeholder="Write whatever is in your heart..." class="w-full p-4 rounded-2xl border-2 border-romantic-200 focus:border-romantic-500 focus:ring-4 focus:ring-romantic-100 outline-none text-stone-800 text-sm sm:text-base leading-relaxed resize-none transition"></textarea>
+            </div>
+            <p class="text-[11px] text-stone-400 text-center italic">🔒 100% private & client-side only. Your message stays on this device.</p>
+            <button type="submit" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-romantic-500 via-rose-500 to-romantic-600 text-white font-bold text-base shadow-lg shadow-romantic-500/25 hover:scale-[1.02] active:scale-[0.98] transition flex items-center justify-center gap-2">
+              <span>Send Love Back</span>
+              <span class="text-xl animate-heartbeat">💕</span>
+            </button>
+          </form>
+
+          <div id="saved-message-display" class="hidden mt-6 p-4 rounded-2xl bg-romantic-50 border border-romantic-200 text-left">
+            <div class="flex items-center justify-between text-xs text-romantic-700 font-bold mb-1">
+              <span>Your Saved Note:</span>
+              <span id="saved-note-time" class="text-stone-400 font-normal">Just now</span>
+            </div>
+            <p id="saved-note-text" class="text-stone-700 text-sm italic"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Love Sent Modal -->
+      <div id="love-sent-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl shadow-2xl p-8 max-w-sm w-full text-center space-y-4 border-4 border-romantic-200 animate-bounce-soft">
+          <div class="text-6xl animate-heartbeat">💖</div>
+          <h3 class="text-2xl font-black text-romantic-900">Love Received!</h3>
+          <p class="text-sm text-stone-600 leading-relaxed">Your sweet message has been stored straight into my heart. Thank you for making this world so magical ✨</p>
+          <button onclick="closeLoveSentModal()" class="w-full py-3 bg-gradient-to-r from-romantic-500 to-rose-500 text-white font-bold rounded-2xl shadow hover:scale-105 transition">I Love You Too! 🥰</button>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="relative z-10 py-12 px-4 text-center border-t border-romantic-200/80 bg-white/40 backdrop-blur-sm">
+      <div class="max-w-md mx-auto space-y-3">
+        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-romantic-100 text-romantic-600 text-2xl animate-heartbeat shadow-sm">❤</div>
+        <p class="text-sm font-semibold text-romantic-900">Made with <span class="text-romantic-600 font-bold">❤</span> by <strong class="text-romantic-700">S</strong> for <strong class="text-romantic-700">M</strong></p>
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/80 rounded-full border border-romantic-200 text-xs font-bold text-romantic-800 shadow-sm">
+          <span>S</span><span class="text-romantic-500 animate-pulse">❤</span><span>M</span>
+          <span class="text-[10px] text-stone-400 font-normal">• 19 Years of Magic</span>
+        </div>
+        <p class="text-[11px] text-stone-400 pt-2 italic">"You are my today and all of my tomorrows."</p>
+      </div>
+    </footer>
+
+    <!-- ============================================
+         MAIN JAVASCRIPT
+         ============================================ -->
+    <script>
+      /* ============================================
+         1. PASSWORD GATE (FIXED: no example, S/M names)
+         ============================================ */
+      const SECRET_PASS = "mishi123";
+
+      function checkPasswordAuth() {
+        if (sessionStorage.getItem("sm_birthday_unlocked") === "true") {
+          const gate = document.getElementById("password-gate");
+          gate.classList.add("opacity-0", "pointer-events-none");
+          setTimeout(() => { gate.style.display = "none"; }, 700);
+          setTimeout(triggerConfettiBurst, 800);
+        }
+      }
+
+      function handlePasswordSubmit(e) {
+        e.preventDefault();
+        const input = document.getElementById("password-input").value.trim().toLowerCase();
+        const err = document.getElementById("password-error");
+
+        if (input === SECRET_PASS) {
+          err.classList.add("hidden");
+          sessionStorage.setItem("sm_birthday_unlocked", "true");
+          playChime(660);
+
+          triggerCelebrationExplosion();
+
+          const gate = document.getElementById("password-gate");
+          gate.classList.add("opacity-0", "pointer-events-none");
+          setTimeout(() => { gate.style.display = "none"; }, 700);
+        } else {
+          err.classList.remove("hidden");
+          const form = document.getElementById("password-form");
+          form.classList.add("animate-wiggle");
+          setTimeout(() => form.classList.remove("animate-wiggle"), 1000);
+        }
+      }
+
+      function togglePasswordVisibility() {
+        const input = document.getElementById("password-input");
+        const btn = document.getElementById("show-pass-btn");
+        if (input.type === "password") {
+          input.type = "text";
+          btn.textContent = "Hide";
+        } else {
+          input.type = "password";
+          btn.textContent = "Show";
+        }
+      }
+
+      function givePasswordClue() {
+        // Poetic, non-revealing clue
+        const clues = [
+          "Think of what I call you when nobody else is around... and add a little '123' to it 🤍",
+          "The sweetest nickname I whisper... followed by three little numbers 🌸",
+          "Two words your heart already knows — yours, plus three digits 💕"
+        ];
+        const clue = clues[Math.floor(Math.random() * clues.length)];
+        alert("🌹 A tiny hint for you:\n\n" + clue);
+      }
+
+      function lockApp() {
+        sessionStorage.removeItem("sm_birthday_unlocked");
+        const gate = document.getElementById("password-gate");
+        gate.style.display = "flex";
+        gate.classList.remove("opacity-0", "pointer-events-none");
+        document.getElementById("password-input").value = "";
+      }
+
+      /* ============================================
+         2. HERO ANIMATED HEADLINE
+         ============================================ */
+      function animateHeroHeadline() {
+        const titleEl = document.getElementById("animated-hero-title");
+        const text = "Happy Birthday M! 🎂";
+        titleEl.innerHTML = "";
+
+        Array.from(text).forEach((char, index) => {
+          const span = document.createElement("span");
+          span.textContent = char === " " ? "\u00A0" : char;
+          span.classList.add("bounce-letter");
+          span.style.animationDelay = `${index * 0.05}s`;
+          titleEl.appendChild(span);
+        });
+      }
+
+      /* ============================================
+         3. FLOATING PARTICLES + DRIFTING PETALS
+         ============================================ */
+      const particleIcons = ["💖", "🌸", "✨", "💕", "🧸", "💌", "🌷", "⭐", "🌹", "💗"];
+      function createFloatingParticle() {
+        const container = document.getElementById("particles-container");
+        if (!container) return;
+        const particle = document.createElement("div");
+        particle.className = "floating-particle";
+        particle.textContent = particleIcons[Math.floor(Math.random() * particleIcons.length)];
+        const left = Math.random() * 100;
+        const duration = 8 + Math.random() * 10;
+        const size = 16 + Math.random() * 22;
+        particle.style.left = `${left}vw`;
+        particle.style.animationDuration = `${duration}s`;
+        particle.style.fontSize = `${size}px`;
+        container.appendChild(particle);
+        setTimeout(() => particle.remove(), duration * 1000);
+      }
+      setInterval(createFloatingParticle, 700);
+
+      // Slow drifting petals
+      function createDriftPetal() {
+        const container = document.getElementById("petals-container");
+        if (!container) return;
+        const petal = document.createElement("div");
+        petal.className = "drift-petal";
+        petal.textContent = ["🌸","🌹","💮","🏵️"][Math.floor(Math.random()*4)];
+        petal.style.left = `${Math.random() * 100}vw`;
+        petal.style.bottom = `-30px`;
+        petal.style.fontSize = `${18 + Math.random()*14}px`;
+        petal.style.animationDuration = `${16 + Math.random()*8}s`;
+        container.appendChild(petal);
+        setTimeout(() => petal.remove(), 24000);
+      }
+      setInterval(createDriftPetal, 1800);
+
+      /* ============================================
+         4. CURSOR HEART TRAIL (toggleable)
+         ============================================ */
+      let cursorTrailEnabled = true;
+      function toggleCursorHearts() {
+        cursorTrailEnabled = !cursorTrailEnabled;
+        const dot = document.getElementById("trail-status");
+        dot.classList.toggle("bg-green-500");
+        dot.classList.toggle("bg-stone-400");
+      }
+      const trailEmojis = ["💖","💕","✨","🌸","💗","⭐"];
+      document.addEventListener("mousemove", (e) => {
+        if (!cursorTrailEnabled) return;
+        if (Math.random() > 0.4) return;
+        const heart = document.createElement("div");
+        heart.className = "cursor-heart";
+        heart.textContent = trailEmojis[Math.floor(Math.random()*trailEmojis.length)];
+        heart.style.left = `${e.clientX}px`;
+        heart.style.top = `${e.clientY}px`;
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 1000);
+      });
+
+      /* ============================================
+         5. SCREENSHOT / SCREEN RECORD PROTECTION
+         ============================================ */
+      const blocker = document.getElementById("screenshot-blocker");
+      let blockerActive = false;
+
+      function flashBlocker() {
+        if (blockerActive) return;
+        blockerActive = true;
+        blocker.classList.add("show");
+        if (navigator.vibrate) navigator.vibrate(80);
+        setTimeout(() => {
+          blocker.classList.remove("show");
+          blockerActive = false;
+        }, 1800);
+      }
+
+      // Block keyboard shortcuts
+      document.addEventListener("keydown", (e) => {
+        // Print Screen
+        if (e.key === "PrintScreen" || e.keyCode === 44) {
+          e.preventDefault();
+          flashBlocker();
+          return false;
+        }
+        // Ctrl+S, Ctrl+P, Ctrl+Shift+S (save / print / screenshot)
+        if ((e.ctrlKey || e.metaKey) && ["s","p","S","P"].includes(e.key)) {
+          e.preventDefault();
+          flashBlocker();
+          return false;
+        }
+        // Mac screenshot combos
+        if ((e.metaKey || e.ctrlKey) && e.shiftKey && ["3","4","5"].includes(e.key)) {
+          e.preventDefault();
+          flashBlocker();
+          return false;
+        }
+        // F12 devtools partially
+        if (e.key === "F12" && e.shiftKey) {
+          // Allow, but also add visual deterrent
+        }
+      });
+
+      // Disable right-click
+      document.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+        flashBlocker();
+        return false;
+      });
+
+      // Detect visibility change (potential screen recording start)
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+          // Could trigger overlay on return if needed
+        }
+      });
+
+      // Detect when user tries to drag/save image
+      document.addEventListener("dragstart", (e) => {
+        if (e.target.tagName === "IMG") {
+          e.preventDefault();
+          flashBlocker();
+        }
+      });
+
+      /* ============================================
+         6. MAGNETIC BUTTON EFFECT (advanced hover)
+         ============================================ */
+      document.querySelectorAll(".magnetic-btn").forEach(btn => {
+        btn.addEventListener("mousemove", (e) => {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          btn.style.transform = `translate(${x * 0.15}px, ${y * 0.2}px) scale(1.04)`;
+        });
+        btn.addEventListener("mouseleave", () => {
+          btn.style.transform = "";
+        });
+      });
+
+      /* ============================================
+         7. GALLERY (Scrapbook Polaroids)
+         ============================================ */
+            const galleryData = [
+        { title: "Golden Hour Magic", desc: "The moment your laugh stopped time itself.", src: "https://i.pinimg.com/originals/00/b8/39/00b83937134ac26e9f1f2b78e201ea28.gif" },
+        { title: "Coffee & Endless Talks", desc: "Hours feel like minutes when I'm with you.", src: "https://i.pinimg.com/736x/29/fc/44/29fc44ade8a40b8a8b1575aa4d8ae6ad.jpg" },
+        { title: "Hand in Hand", desc: "My favourite place in this whole world.", src: "https://i.pinimg.com/1200x/83/ac/1c/83ac1c864df29a77848f640043d7f28c.jpg" },
+        { title: "The Prettiest Eyes", desc: "Whenever you look at me, everything else fades.", src: "https://i.pinimg.com/736x/9a/1e/1f/9a1e1ffb12233407d232d92b6a1b074c.jpg" },
+        { title: "Sweet Celebrations", desc: "Candles, wishes and you. Always you.", src: "https://i.pinimg.com/736x/25/62/42/256242cce50928e821182ec2235d5232.jpg" },
+        { title: "Under the Stars", desc: "The brightest star was always beside me.", src: "https://i.pinimg.com/originals/9c/8e/60/9c8e604cdd38f676072afdab4173dd1d.gif" },
+        { title: "Forever Us", desc: "Two hearts, one journey, infinite memories.", src: "https://i.pinimg.com/736x/a6/ac/aa/a6acaa51181851b80e144ead31c864d4.jpg" },
+        { title: "Quiet Moments", desc: "When nothing happens but everything feels right.", src: "https://i.pinimg.com/736x/92/d3/fc/92d3fc56b650c0c6443dfa753d3261cf.jpg" },
+      ];
+
+      function renderGallery() {
+        const grid = document.getElementById("gallery-grid");
+        grid.innerHTML = "";
+        const rotations = ["-rotate-2","rotate-2","-rotate-1","rotate-3","rotate-[-2.5deg]","rotate-[1.5deg]","-rotate-3","rotate-[2.5deg]"];
+        const tapes = ["tape-top-left","tape-top-right","tape-top-left","tape-top-right","tape-top-left","tape-top-right","tape-top-left","tape-top-right"];
+        galleryData.forEach((item, index) => {
+          const card = document.createElement("div");
+          card.className = `polaroid-card group relative bg-white p-4 pt-4 pb-6 rounded-2xl shadow-lg hover:shadow-2xl border border-romantic-200 transition-all duration-500 transform ${rotations[index % rotations.length]} hover:rotate-0 hover:-translate-y-3 hover:z-20 cursor-pointer reveal`;
+          card.style.transitionDelay = `${index * 0.05}s`;
+          card.onclick = () => openLightbox(index);
+          card.innerHTML = `
+            <div class="${tapes[index % tapes.length]} tape-corner"></div>
+            <div class="overflow-hidden rounded-xl bg-romantic-100 aspect-square">
+              <img src="${item.src}" alt="${item.title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" referrerpolicy="no-referrer" />
+            </div>
+            <div class="mt-4 text-center font-handwriting text-xl text-romantic-800 font-bold">"${item.title}"</div>
+            <p class="text-[11px] text-stone-500 text-center mt-0.5">${item.desc}</p>
+          `;
+          grid.appendChild(card);
+        });
+      }
+
+      let currentLightboxIdx = 0;
+      function openLightbox(idx) {
+        currentLightboxIdx = idx;
+        const item = galleryData[idx];
+        document.getElementById("lightbox-img").src = item.src;
+        document.getElementById("lightbox-title").textContent = item.title;
+        document.getElementById("lightbox-desc").textContent = item.desc;
+        const modal = document.getElementById("lightbox-modal");
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+      }
+      function closeLightbox(e) {
+        if (e.target === document.getElementById("lightbox-modal")) closeLightboxDirect();
+      }
+      function closeLightboxDirect() {
+        const modal = document.getElementById("lightbox-modal");
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
+      function nextLightbox() {
+        currentLightboxIdx = (currentLightboxIdx + 1) % galleryData.length;
+        openLightbox(currentLightboxIdx);
+      }
+      function prevLightbox() {
+        currentLightboxIdx = (currentLightboxIdx - 1 + galleryData.length) % galleryData.length;
+        openLightbox(currentLightboxIdx);
+      }
+      window.addEventListener("keydown", (e) => {
+        if (document.getElementById("lightbox-modal").classList.contains("hidden")) return;
+        if (e.key === "Escape") closeLightboxDirect();
+        if (e.key === "ArrowRight") nextLightbox();
+        if (e.key === "ArrowLeft") prevLightbox();
+      });
+
+      /* ============================================
+         8. TAREEF SECTION (FIXED: appends single card, no jump)
+         ============================================ */
+      // Original 6 tareefs (always rendered)
+      const baseTareefs = [
+        { urdu: "تم جتنی پیاری ہو، اتنی ہی میری زندگی خوبصورت ہے", roman: "Tum jitni pyari ho, utni hi meri zindagi khoobsurat hai.", en: "As lovely as you are, that is how beautiful my whole life has become.", tag: "Purity 🌸" },
+        { urdu: "تمہاری ہنسی میرے اداس دنوں کی دوا ہے", roman: "Tumhari hansi mere har udaas din ki dawa hai.", en: "Your laughter is the sweetest medicine for my darkest days.", tag: "Sunshine ☀️" },
+        { urdu: "تم بات کرتی ہو تو وقت کا پتہ ہی نہیں چلتا", roman: "Tum baat karti ho toh waqt ka pata hi nahi chalta.", en: "When you speak, even time stops just to listen to you.", tag: "Magic ✨" },
+        { urdu: "تمہاری آنکھوں میں جو سچائی ہے، وہ دنیا میں کہیں نہیں", roman: "Tumhari aankhon mein jo sachai hai, woh duniya mein kahin nahi.", en: "The honesty and kindness in your eyes cannot be found anywhere else.", tag: "Soulmate 💖" },
+        { urdu: "تم صرف میری محبت نہیں، میری ہر دعا کا جواب ہو", roman: "Tum sirf meri mohabbat nahi, meri har dua ka jawab ho.", en: "You are not just my love; you are the answer to all my silent prayers.", tag: "Blessing 🤲" },
+        { urdu: "تمہارا ساتھ ہونا ہی میرے لیے سب سے بڑا تحفہ ہے", roman: "Tumhara saath hona hi mere liye sab se bada tohfa hai.", en: "Having you by my side is the greatest gift universe gave me.", tag: "Favourite 👑" }
+      ];
+
+      // Bonus pool — each click adds ONE new tareef at the END of grid
+      const bonusTareefs = [
+        { urdu: "تمہاری سادگی ہی تمہارا سب سے بڑا حسن ہے", roman: "Tumhari saadgi hi tumhara sab se bada husn hai.", en: "Your innocent simplicity is your greatest beauty.", tag: "Grace 🕊️" },
+        { urdu: "تیرا خیال رکھنا دل کی عادت بن گیا ہے", roman: "Tera khayal rakhna dil ki aadat ban gayi hai.", en: "Caring for you has become the most beautiful habit of my heart.", tag: "Care 🥺" },
+        { urdu: "تیری آواز سن کر دل کو قرار آ جاتا ہے", roman: "Teri aawaz sun kar dil ko qaraar aa jata hai.", en: "Hearing your voice brings instant peace to my restless heart.", tag: "Serenity 🎵" },
+        { urdu: "تجھ سے بات کر کے دن کی تھکان دور ہو جاتی ہے", roman: "Tujh se baat kar ke din ki thakaan door ho jaati hai.", en: "Just one conversation with you washes away my whole day's tiredness.", tag: "Comfort 🫶" },
+        { urdu: "تمہاری ہر ادا پر دل نثار ہے میرا", roman: "Tumhari har ada par dil nisaar hai mera.", en: "Every little thing you do, my heart surrenders to it completely.", tag: "Adoration 💘" },
+        { urdu: "تمہاری موجودگی سے ہر جگہ سنور جاتی ہے", roman: "Tumhari maujoodgi se har jagah sanwar jaati hai.", en: "Your very presence makes every place feel more beautiful.", tag: "Magic 🌷" },
+        { urdu: "تمہاری آنکھیں وہ کہانی کہتی ہیں جو الفاظ نہیں کہہ سکتے", roman: "Tumhari aankhein woh kahaani kehti hain jo alfaaz nahi keh sakte.", en: "Your eyes tell a story that words could never tell.", tag: "Storyteller 👁️" },
+        { urdu: "دل کی ہر دھڑکن میں بس تمہارا نام ہے", roman: "Dil ki har dhadkan mein bas tumhara naam hai.", en: "Every single heartbeat of mine quietly whispers your name.", tag: "Forever 💞" }
+      ];
+
+      // Track which bonus cards have been shown (so we don't repeat)
+      let bonusIdx = 0;
+      let extraCount = 0;
+
+      function makeTareefCard(item, index, isNew = false) {
+        const card = document.createElement("div");
+        const rotation = ["-rotate-1","rotate-2","rotate-[-2deg]","rotate-1","-rotate-2","rotate-[1.5deg]"][index % 6];
+        card.className = `flip-card perspective-1000 h-64 cursor-pointer ${isNew ? 'tareef-new' : 'reveal'}`;
+        if (!isNew) card.style.transitionDelay = `${index * 0.05}s`;
+        card.onclick = () => card.classList.toggle("flipped");
+        card.innerHTML = `
+          <div class="flip-card-inner rounded-3xl shadow-lg border-2 border-romantic-200 ${rotation} hover:rotate-0 transition-all duration-300">
+            <div class="flip-card-front bg-white p-6 flex flex-col justify-between items-center text-center">
+              <span class="px-3 py-1 bg-romantic-100 text-romantic-700 text-xs font-bold rounded-full">${item.tag}</span>
+              <div class="space-y-2 my-auto">
+                <span class="text-3xl">💌</span>
+                <p class="font-handwriting text-2xl font-bold text-romantic-800">Tareef #${index + 1}</p>
+                <p class="text-xs text-stone-500 font-medium">Hover or tap to reveal</p>
+              </div>
+              <span class="text-[11px] text-romantic-500 font-semibold">Flip Card ↷</span>
+            </div>
+            <div class="flip-card-back bg-gradient-to-br from-romantic-500 via-rose-500 to-romantic-600 text-white p-6 flex flex-col justify-between items-center text-center">
+              <span class="text-xs font-bold tracking-widest text-pink-200 uppercase">Dil Se</span>
+              <div class="my-auto space-y-2">
+                <p class="font-urdu text-lg leading-relaxed">${item.urdu}</p>
+                <p class="text-xs font-semibold italic text-pink-100">"${item.roman}"</p>
+                <p class="text-[11px] text-white/90 font-light border-t border-white/20 pt-2">${item.en}</p>
+              </div>
+              <span class="text-[11px] text-pink-200">S ❤ M</span>
+            </div>
+          </div>
+        `;
+        return card;
+      }
+
+      function renderTareefGrid() {
+        const grid = document.getElementById("tareef-grid");
+        grid.innerHTML = "";
+        baseTareefs.forEach((item, index) => {
+          grid.appendChild(makeTareefCard(item, index, false));
+        });
+      }
+
+      // FIXED: Add ONLY ONE new card (no full re-render that causes jump)
+      function addNewTareefCard() {
+        if (bonusIdx >= bonusTareefs.length) {
+          // Cycle back if exhausted (after all shown)
+          bonusIdx = 0;
+        }
+        const item = bonusTareefs[bonusIdx];
+        bonusIdx++;
+        extraCount++;
+
+        const grid = document.getElementById("tareef-grid");
+        const card = makeTareefCard(item, baseTareefs.length + extraCount - 1, true);
+        grid.appendChild(card);
+
+        // Smooth scroll to the newly added card (not back to top)
+        setTimeout(() => {
+          card.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 50);
+
+        triggerConfettiBurst();
+        playChime(550);
+
+        // Update button text when all bonus shown
+        if (bonusIdx >= bonusTareefs.length && extraCount >= bonusTareefs.length) {
+          const btn = document.getElementById("aur-tareef-btn");
+          if (btn) {
+            btn.querySelector("span:first-child").textContent = "Phir Se!";
+          }
+        }
+      }
+
+      /* ============================================
+         9. SHAYARI (now with prev/next + 7 couplets)
+         ============================================ */
+      const shayariList = [
+        { urdu: "تمہاری مسکراہٹ میں وہ سکون ہے، جو کسی شاعر کے لفظوں میں بھی نہیں ملتا", roman: "Tumhari muskurahat mein woh sukoon hai, jo kisi shayar ke lafzon mein bhi nahi milta.", en: "Your smile holds a serenity that no poet could ever capture in words." },
+        { urdu: "ہر موسم تم سے ہی خوبصورت لگتا ہے، تم ہو تو زندگی بھی گانا لگتا ہے", roman: "Har mausam tumse hi khoobsurat lagta hai, tum ho toh zindagi bhi gaana lagta hai.", en: "Every season is beautiful only because of you; with you, life feels like a melody." },
+        { urdu: "تمہارے ہونے سے یہ دل اتنا سکون محسوس کرتا ہے، جیسے بارش کے بعد مٹی", roman: "Tumhare hone se yeh dil itna sakoon mehsoos karta hai, jaise barish ke baad mitti.", en: "Being with you makes my heart feel as peaceful as the earth after the first rain." },
+        { urdu: "ہم نے جب بھی خدا سے کوئی مانگی دعا، پہلے تمہاری ہنسی کا خیال آیا", roman: "Humne jab bhi khuda se koi maangi dua, pehle tumhari hansi ka khayal aaya.", en: "Whenever I raised my hands in prayer, your smile was the first thing in my heart." },
+        { urdu: "تیری مسکان پر قربان ہے یہ دل میرا، تم سلامت رہو یہی ارمان ہے میرا", roman: "Teri muskaan par qurbaan hai yeh dil mera, tum salamat raho yahi armaan hai mera.", en: "My heart is devoted to your smile; may you always stay happy and protected." },
+        { urdu: "کوئی کہے یا نہ کہے، مگر مجھے یقین ہے، تم سے بہتر کوئی نہیں اس زمین پر", roman: "Koi kahe ya na kahe, mujhe yakeen hai, tum se behtar koi nahi is zameen par.", en: "Whatever the world says, I am certain — there is no one better than you on this earth." },
+        { urdu: "اگر زندگی ایک کتاب ہے، تو تم اس کا سب سے خوبصورت صفحہ ہو", roman: "Agar zindagi ek kitaab hai, toh tum uska sab se khoobsurat safha ho.", en: "If life is a book, then you are its most beautiful page — the one I keep re-reading forever." }
+      ];
+
+      let currentShayariIdx = 0;
+      function updateShayari() {
+        const s = shayariList[currentShayariIdx];
+        const container = document.getElementById("shayari-container");
+        container.style.opacity = "0";
+        container.style.transform = "translateY(15px)";
+        setTimeout(() => {
+          document.getElementById("urdu-original-text").textContent = `"${s.urdu}"`;
+          document.getElementById("urdu-roman-text").textContent = `"${s.roman}"`;
+          document.getElementById("urdu-english-text").textContent = s.en;
+          document.getElementById("shayari-counter").textContent = `Couplet ${currentShayariIdx + 1} of ${shayariList.length}`;
+          container.style.opacity = "1";
+          container.style.transform = "translateY(0)";
+        }, 280);
+        playChime(520);
+      }
+      function nextShayari() {
+        currentShayariIdx = (currentShayariIdx + 1) % shayariList.length;
+        updateShayari();
+      }
+      function prevShayari() {
+        currentShayariIdx = (currentShayariIdx - 1 + shayariList.length) % shayariList.length;
+        updateShayari();
+      }
+
+      /* ============================================
+         10. REASONS I LOVE YOU (NEW — 100 reasons)
+         ============================================ */
+      const reasonsList = [
+        "Tumhari muskurahat ek tohfa hai jisko main har roz kholna chahta hun 💖",
+        "Tum jab naraz hoti ho, toh mujhe aur zyada pyaar aata hai 🥺",
+        "Tumhari aankhen sab se khoobsurat qissa kehti hain 👁️",
+        "Tum jab hassti ho, duniya tham jaati hai 🌸",
+        "Tumhari har choti aadat mujhe yaad rehti hai 🌷",
+        "Tum jab apna dil ki baat kehti ho, mera dil pighal jaata hai 💌",
+        "Tum mujhe samajhti ho bina kuch kahe 🤍",
+        "Tum jab mujhe text karti ho, mera din ban jaata hai ✨",
+        "Tumhari har photo mere wallpaper ban jaati hai 📸",
+        "Tum jab 'okayumm' bolti ho, dil garden-garden ho jaata hai 😄",
+        "Tum jab naraz hokar bhi pyaar karti ho, woh meri duniya hai 💕",
+        "Tum jab khana banati ho (ya order karti ho), sab acha lagta hai 🍰",
+        "Tumhari ek nazar sab theek kar deti hai 🌹",
+        "Tum jab 'no' ko 'nunam' bolti ho, dil hase 🌟",
+        "Tum jab chhupti ho abaya mein, dil kheenchta hai 🤍",
+        "Tum jab mujhse baat karti ho raat ko, neend bhool jaati hai 🌙",
+        "Tum jab cute emoji bhejti ho, screen save ho jaati hai 🥰",
+        "Tumhara har andaaz mujhe deewana karta hai 💃",
+        "Tum jab meri baat dhyan se sunnti ho, duniya ruk jaati hai 👂",
+        "Tum jab haste hue kuch kehti ho, woh gana lagta hai 🎶",
+        "Tum jab bhi mujhse poochti ho 'kya karun', meri duniya hai 🥰",
+        "Tum jab mera khayal rakhti ho, dil shukrana kehta hai 🤲",
+        "Tumhari ek jhalak sab badal deti hai 💫",
+        "Tum jab so jaati ho, main so nahi paata tumhe sochke 🌙",
+        "Tum jab 'I love you' kehti ho, duniya khubsurat ho jaati hai 💘",
+        "Tum jab bhi tang karti ho, pyaar aur badh jaata hai 😆",
+        "Tum jab bhi kuch naya kehti ho, dil lag jaata hai 💡",
+        "Tum jab bhi serious hoti ho, phir bhi cute lagti ho 🥺",
+        "Tum jab kuch bhi khaati ho, mujhe dekhna acha lagta hai 🍫",
+        "Tum jab gussa karti ho, toh mujhe manana acha lagta hai 🥰",
+        "Tum jab kuch bhulti ho, mujhe yaad dilana pasand hai 💭",
+        "Tum jab bhi meri taraf dekhti ho, waqt ruk jaata hai ⏰",
+        "Tum jab meri care kehti ho, dil naram ho jaata hai 🤍",
+        "Tum jab bhi late reply deti ho, intezaar mein bhi maza aata hai 📱",
+        "Tum jab bhi achanak video call karti ho, dil dhak-dhak 💓",
+        "Tum jab bhi pyar se meri taareef karti ho, main kho jaata hun 🌟",
+        "Tum jab bhi mere liye dua karti ho, aman ka ehsaas hota hai 🤲",
+        "Tum jab bhi meri photo dekhti ho, smile aa jaati hai 😄",
+        "Tum jab bhi kuch puchhti ho meri, ehsaas hota hai main important hun 💖",
+        "Tum jab bhi mera naam leti ho, sab kuch theek lagta hai 🫶",
+        "Tum jab bhi mere kapde pe tan kehti ho, lagta hai fashion queen ho 👑",
+        "Tum jab bhi koi cute cartoon bhejti ho, dil khush ho jaata hai 🐰",
+        "Tum jab bhi meri tarf aati ho, dil garden-garden ho jaata hai 🌷",
+        "Tum jab bhi achi baat sunati ho, dil narm padh jaata hai 🤍",
+        "Tum jab bhi surprise deti ho, duniya chamak jaati hai 🎁",
+        "Tum jab bhi pyar se dekhti ho, sab kuch rang lagta hai 🎨",
+        "Tum jab bhi meri fikar karti ho, lagta hai duniya mein koi hai 💞",
+        "Tum jab bhi cute sa message bhejti ho, din bright ho jaata hai ☀️",
+        "Tum jab bhi achanak pyar se gale lagti ho, duniya ruk jaati hai 🫂",
+        "Tum jab bhi naraz hokar bhi pyar se baat karti ho, dil jeet leti ho 🥹",
+        "Tum jab bhi mere kuch kehne se pehle samajh jaati ho, mind blowing 🤯",
+        "Tum jab bhi cute si complaint karti ho, hansi aa jaati hai 😆",
+        "Tum jab bhi pyar wali baat karte hue sharmati ho, behtareen 🥰",
+        "Tum jab bhi mere liye kuch karti ho, dil bhar aata hai 💕",
+        "Tum jab bhi subah sabse pehle mujhe msg karti ho, din acha shuru hota hai 🌅",
+        "Tum jab bhi mere ghar ka khayal karti ho, ghar yaad aata hai 🏡",
+        "Tum jab bhi cute si drawing bana ke bhejti ho, save ho jaati hai ✏️",
+        "Tum jab bhi kuch new sikhti ho, mujhse share karti ho, dil khush 💡",
+        "Tum jab bhi mujhe gale lagaati ho, duniya ki saari khushi mil jaati hai 🫶",
+        "Tum jab bhi meri baat ka jawab haste hue deti ho, pyaar aur hota hai 😄",
+        "Tum jab bhi apni khushi batati ho, meri khushi double ho jaati hai 🎉",
+        "Tum jab bhi mere liye dua mein yaad karti ho, amn ka ehsaas 🤲",
+        "Tum jab bhi cute si shayari bhejti ho, dil hoon sa ho jaata hai 🌹",
+        "Tum jab bhi apni aankh band karke so jaati ho, meri duniya sukoon 🌙",
+        "Tum jab bhi thaki hui lagti ho, mera farz hai tumhe thakan se bachana 💆",
+        "Tum jab bhi mera intezaar karti ho, mohabbat aur ghani hoti hai ⏳",
+        "Tum jab bhi apni baat dil se kehti ho, dil narm ho jaata hai 💗",
+        "Tum jab bhi mere saath selfie leti ho, sabse pyaari lagti ho 📸",
+        "Tum jab bhi has ke meri baat dhyan se sunnti ho, ek sapna sa lagta hai 💭",
+        "Tum jab bhi mujhe yaad karti ho, ehsaas hota hai talaab hai 🌙",
+        "Tum jab bhi kuch share karti ho, jaise meri hai sab 🤍",
+        "Tum jab bhi meri ek baat ignore karti ho (kabhi kabhi), cute lagti ho 😅",
+        "Tum jab bhi koi jhalak deti ho, dil ek pal mein khush ho jaata hai ✨",
+        "Tum jab bhi saath mein kuch khaati ho, swad double ho jaata hai 🍰",
+        "Tum jab bhi mujhe 'jaan' kehti ho, sab theek ho jaata hai 🌸",
+        "Tum jab bhi serious hokar baat karti ho, phir bhi pyaari lagti ho 😌",
+        "Tum jab bhi meri care mein kuch galat karti ho, maza aata hai 😆",
+        "Tum jab bhi apni har cheez share karti ho, dil khush ho jaata hai 🫶",
+        "Tum jab bhi achanak cute sa gift bhejti ho, duniya chamak jaati hai 🎁",
+        "Tum jab bhi meri baat sunn ke hansti ho, dil garden-garden 🌷",
+        "Tum jab bhi kuch naya try karti ho, excited ho jaata hun 💡",
+        "Tum jab bhi mujhe 'good morning' kehti ho, din bright ho jaata hai ☀️",
+        "Tum jab bhi raat ko 'good night' kehti ho, neend pyaari ho jaati hai 🌙",
+        "Tum jab bhi koi mushkil mein mera saath deti ho, dil narm ho jaata hai 🤍",
+        "Tum jab bhi pyaar se mera khayal rakhti ho, sukoon milta hai 🫶",
+        "Tum jab bhi apne aap ko blame karti ho (galti se), main ro deta hun 😢",
+        "Tum jab bhi kuch kehna chahti ho aur ruk jaati ho, curiosity mein pagal 🧐",
+        "Tum jab bhi cute si harkat karti ho, video banana chahta hun 📹",
+        "Tum jab bhi pyar se mera haath pakadti ho, duniya tham jaati hai 🤝",
+        "Tum jab bhi apni family ki baat karti ho, achi lagti ho 👨‍👩‍👧",
+        "Tum jab bhi meri har baat par yakeen karti ho, bharosa mehsoos hota hai 🔐",
+        "Tum jab bhi ek pal ke liye door hoti ho, intezaar shuru ho jaata hai ⏳",
+        "Tum jab bhi laut ke aati ho, sab kuch theek ho jaata hai 💞",
+        "Tum jab bhi subah sabse pehle meri photo dekhti ho, ehsaas hota hai pyaar 📱",
+        "Tum jab bhi koi nayi cheez banati ho (ya try karti ho), proud feel 💪",
+        "Tum jab bhi apne dil ki baat mujhe kehti ho, amn ka ehsaas 🤍",
+        "Tum jab bhi mujhe pyar se daantti ho, maza aata hai 😄",
+        "Tum jab bhi achanak pyar dikhati ho, duniya chamakti hai ✨",
+        "Tum jab bhi mere liye dua karti ho, ehsaas hota hai kitni khushnaseeb hun 🤲",
+        "Tum jab bhi mujhe 'sorry' kehti ho, dil narm ho jaata hai 🥺",
+        "Tum jab bhi pyar se mera sar pakad ke sulaati ho, jannat mehsoos 🌙",
+        "Tum jab bhi achanak cute si awaaz mein bolti ho, dil pighal jaata hai 💗",
+        "Tum jab bhi kuch naya sikhti ho (mere liye), hero feel 💪",
+        "Tum jab bhi 'okayumm' likhti ho message mein, screenshot leta hun 📱",
+        "Tum jab bhi mera intezaar karti ho, mohabbat aur ghani hoti hai ⏳",
+        "Tum jab bhi pyar se mera naam leti ho, sab kuch theek ho jaata hai 💖",
+        "Tum jab bhi kuch bhulti ho aur cute si hokar yaad karti ho, pyaar 🥰",
+        "Tum jab bhi mujhe 'baby' ya 'jaanu' kehti ho, dil garden-garden 🌷"
+      ];
+
+      let reasonsRevealed = 0;
+      function renderReasonsGrid() {
+        const grid = document.getElementById("reasons-grid");
+        grid.innerHTML = "";
+        for (let i = 0; i < 6; i++) {
+          const card = document.createElement("div");
+          card.className = "p-5 bg-white/80 backdrop-blur rounded-2xl border-2 border-romantic-100 text-center text-stone-400 font-semibold text-sm shadow reveal";
+          card.style.transitionDelay = `${i * 0.05}s`;
+          card.innerHTML = `<span class="text-3xl block mb-2">🎁</span>Card #${i+1} — Tap reveal below to open`;
+          grid.appendChild(card);
+        }
+      }
+
+      function revealNextReason() {
+        const grid = document.getElementById("reasons-grid");
+        if (reasonsRevealed >= reasonsList.length) {
+          // Loop back
+          renderReasonsGrid();
+          reasonsRevealed = 0;
+          document.getElementById("reasons-progress").textContent = `0 / ${reasonsList.length} reasons revealed`;
+          return;
+        }
+
+        // Replace the first "locked" card with a real one
+        const cards = grid.children;
+        const idx = reasonsRevealed;
+        const newCard = document.createElement("div");
+        newCard.className = "p-5 bg-gradient-to-br from-romantic-50 to-pink-50 rounded-2xl border-2 border-romantic-300 text-center shadow-lg reason-anim";
+        newCard.innerHTML = `
+          <span class="text-3xl block mb-2">💝</span>
+          <p class="text-sm text-romantic-800 leading-relaxed font-medium">${reasonsList[idx]}</p>
+        `;
+
+        // Replace the first non-revealed card
+        let replaced = false;
+        for (let i = 0; i < cards.length; i++) {
+          if (cards[i].textContent.includes("Tap reveal below")) {
+            grid.replaceChild(newCard, cards[i]);
+            replaced = true;
+            break;
+          }
+        }
+        if (!replaced) {
+          grid.appendChild(newCard);
+        }
+
+        reasonsRevealed++;
+        document.getElementById("reasons-progress").textContent = `${reasonsRevealed} / ${reasonsList.length} reasons revealed`;
+
+        // When all 6 slots filled, add a new slot for the next reveal
+        if (reasonsRevealed % 6 === 0 && reasonsRevealed < reasonsList.length) {
+          const placeholder = document.createElement("div");
+          placeholder.className = "p-5 bg-white/80 backdrop-blur rounded-2xl border-2 border-romantic-100 text-center text-stone-400 font-semibold text-sm shadow reason-anim";
+          placeholder.innerHTML = `<span class="text-3xl block mb-2">🎁</span>Card #${reasonsRevealed + 1} — Tap reveal below`;
+          grid.appendChild(placeholder);
+        }
+
+        playChime(580);
+        triggerConfettiBurst();
+      }
+
+      /* ============================================
+         11. TIMELINE (NEW)
+         ============================================ */
+      const timelineEvents = [
+        { date: "The Day We Met", emoji: "👋", text: "Jab pehli baar baat hui thi, laga tha zindagi mein kuch naya aaya hai ✨" },
+        { date: "First Conversation", emoji: "💬", text: "Woh lambi raat ki baatein — jaise saalon se jaante the ek dusre ko 🌙" },
+        { date: "When I Realised", emoji: "💡", text: "Ek pal aisa aaya jab dil ne kaha — bas yehi hai, iske bina kuch nahi 💖" },
+        { date: "Our First Fight", emoji: "🌪️", text: "Narazgi ke baad woh pehla 'sorry' — jisse pyaar aur pakka ho gaya 🤝" },
+        { date: "Late Night Message", emoji: "📞", text: "Subah tak baat karna — aur neend ka pyaar bhi tumse kam nahi 🥱" },
+        { date: "Inside Jokes", emoji: "😂", text: "Humari apni duniya ki language — sirf hum dono samajh sakte hain 💕" },
+        { date: "Today — 19!", emoji: "🎂", text: "Aur yeh din aaya — tumhare janam din ki subah, dil karta hai duniya ko bata du 🌅" },
+        { date: "Forever & Always", emoji: "♾️", text: "Aur aage — har janam din, har moment, har saal — sirf tumhare saath 💞" }
+      ];
+
+      function renderTimeline() {
+        const list = document.getElementById("timeline-list");
+        list.innerHTML = "";
+        timelineEvents.forEach((ev, i) => {
+          const item = document.createElement("div");
+          item.className = `relative mb-8 md:grid md:grid-cols-2 md:gap-8 items-center reveal`;
+          item.style.transitionDelay = `${i * 0.08}s`;
+          const isEven = i % 2 === 0;
+          item.innerHTML = `
+            <div class="${isEven ? 'md:text-right md:pr-10' : 'md:col-start-2 md:pl-10'} pl-12 md:pl-0">
+              <div class="bg-white rounded-2xl p-5 shadow-lg border-2 border-romantic-200 hover:border-romantic-400 hover:shadow-xl transition-all hover:-translate-y-1 duration-300">
+                <span class="text-3xl block mb-1">${ev.emoji}</span>
+                <h4 class="font-bold text-romantic-900 text-base sm:text-lg">${ev.date}</h4>
+                <p class="text-sm text-stone-600 mt-1 leading-relaxed">${ev.text}</p>
+              </div>
+            </div>
+            <!-- Center dot -->
+            <div class="absolute left-2 md:left-1/2 top-6 md:top-1/2 -translate-y-0 md:-translate-y-1/2 md:-translate-x-1/2 w-5 h-5 rounded-full bg-gradient-to-tr from-romantic-500 to-rose-400 border-4 border-white shadow-lg timeline-dot"></div>
+          `;
+          list.appendChild(item);
+        });
+      }
+
+      /* ============================================
+         12. FUNNY FACTS (Roman Urdu poetic rewrite)
+         ============================================ */
+      const funnyFacts = [
+        {
+          icon: "🧕",
+          title: "Islamic Princess Energy",
+          text: "Jab tum <span class='font-bold text-romantic-600 underline decoration-pink-300'>abaya aur niqab</span> mein chup jati ho, toh lagti ho jaise chand ke peeche koi pari chhupi ho — har nazar kehti hai, 'yeh koi farishta hai!'",
+          reaction: "👑✨"
+        },
+        {
+          icon: "💕",
+          title: "Poochti Ho Toh Meri Lagti Ho",
+          text: "Kuch bhi karna ho — <span class='font-bold text-romantic-600 underline decoration-pink-300'>mujhse poochh ke karti ho</span>. Bas isi ek baat se dil ko lagta hai ki duniya mein sirf main hun tumhare liye, aur tum sirf mere liye 🥺",
+          reaction: "🥰🫶"
+        },
+        {
+          icon: "😄",
+          title: "Meri Aadat Meri Copy",
+          text: "Tumne meri aadat apne andar utaar li hain — <span class='font-bold text-romantic-600 underline decoration-pink-300'>'ok' tumhare munh se 'okumm' lagta hai, 'no' kehti ho toh 'Nunam' lagta hai</span>. Ab toh meri hi copy ban gayi ho, meri jaan 😅",
+          reaction: "😂🙈"
+        },
+        {
+          icon: "🌙",
+          title: "Sirf Mera Nazara",
+          text: "Mujhe tumhe dekhna acha lagta hai, magar <span class='font-bold text-romantic-600 underline decoration-pink-300'>kisi aur ko tumhe dekhna acha nahi lagta</span>. Aur jab kisi ke saamne khud ko chupa leti ho, toh lagti ho jaise chand ne baadalon mein chhup kar khud ko aur roshan kar liya 🌹",
+          reaction: "😍🌸"
+        },
+        {
+          icon: "🥺",
+          title: "Pyaar Mein Narazgi",
+          text: "Jab main naraz hota hun tumse, tum <span class='font-bold text-romantic-600 underline decoration-pink-300'>manane ki bajaye khud naraz ho jaati ho</span> aur msg bhi nahi karti. Yeh tumhari adaa bhi meri favourite hai — naraz hokar bhi pyaar 💗",
+          reaction: "😢💘"
+        },
+        {
+          icon: "👑",
+          title: "Drama Queen of the Year",
+          text: "Drama Queen ho tum — har choti si baat pe kehti ho <span class='font-bold text-romantic-600 underline decoration-pink-300'>'aap toh mujhse pyaar hi nahi karte!'</span> — aur bas yahi ek line har baar Oscar le jaati hai 🏆😆",
+          reaction: "🎭😂"
+        }
+      ];
+
+      function renderFunnyFacts() {
+        const grid = document.getElementById("funny-facts-grid");
+        grid.innerHTML = "";
+        funnyFacts.forEach((f, i) => {
+          const card = document.createElement("div");
+          card.className = "p-6 bg-white rounded-3xl shadow-lg border-2 border-romantic-100 hover:border-romantic-400 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group reveal";
+          card.style.transitionDelay = `${i * 0.06}s`;
+          card.innerHTML = `
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-3xl group-hover:scale-125 group-hover:rotate-12 transition duration-500">${f.icon}</span>
+              <span class="text-xs font-bold px-2 py-1 bg-pink-100 text-romantic-700 rounded-lg group-hover:bg-romantic-600 group-hover:text-white transition">Fact #${i+1}</span>
+            </div>
+            <h3 class="font-bold text-romantic-900 text-lg mb-1">${f.title}</h3>
+            <p class="text-sm text-stone-600 leading-relaxed">${f.text}</p>
+            <div class="mt-4 pt-3 border-t border-romantic-50 flex items-center justify-between text-xs text-stone-400">
+              <span>Reaction:</span>
+              <span class="group-hover:scale-125 transition text-base">${f.reaction}</span>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+      }
+
+      /* ============================================
+         13. COUPLES QUIZ
+         ============================================ */
+      const quizQuestions = [
+        { question: "Jab S naraz hota hai, toh M kya karti hai?", options: ["Usey manati hai 😘", "Khud naraz ho jaati hai 😅", "Drama karti hai 🎭", "Theek se baat karti hai 🤍"], correct: 1, explanation: "Bilkul sahi! Yeh toh signature move hai 😆" },
+        { question: "M 'no' ko kya bolti hai?", options: ["Nahi 👎", "Nunam 🤭", "Never 🙅‍♀️", "Nope ✋"], correct: 1, explanation: "Nunam! Ab yeh word hi nahi bulaa sakte 😅" },
+        { question: "Tumhare liye sabse khoobsurat cheez kaunsi hai?", options: ["Tumhari hansi 😊", "Tumhari aankhein 👁️", "Tumhara dil 💖", "Sab kuch, har cheez! 💕"], correct: 3, explanation: "Har cheez, har pal 💖" },
+        { question: "Aaj ka din kaisa hai?", options: ["Acha din 😊", "Birthday 🎂", "Sabse khaas din 💖", "Har ek jawab sahi hai 🌟"], correct: 3, explanation: "Har jawab sahi — kyunki aaj TUMHARA din hai ✨" },
+        { question: "S ki favourite tareef kaunsi hai?", options: ["Princess 👑", "Pari 🧚", "Jannat ki hoor 🌸", "Bas meri M 🥰"], correct: 3, explanation: "Kyunki meri M sabse khaas hai 💞" },
+        { question: "Agla 19 saal kaisa hoga?", options: ["Aur pyaara 🌹", "Aur magical ✨", "Aur yaadgaar 📸", "Har jawab sahi 💫"], correct: 3, explanation: "Tumhare saath har saal sabse khaas hoga 💕" }
+      ];
+
+      let currentQuizIdx = 0;
+      let quizScore = 0;
+
+      function loadQuizQuestion() {
+        const q = quizQuestions[currentQuizIdx];
+        document.getElementById("quiz-question-number").textContent = `Question ${currentQuizIdx + 1} of ${quizQuestions.length}`;
+        document.getElementById("quiz-score-live").textContent = `Score: ${quizScore}`;
+        document.getElementById("quiz-progress-bar").style.width = `${((currentQuizIdx + 1) / quizQuestions.length) * 100}%`;
+        document.getElementById("quiz-question-title").textContent = q.question;
+
+        const optionsBox = document.getElementById("quiz-options-container");
+        optionsBox.innerHTML = "";
+        const feedback = document.getElementById("quiz-feedback");
+        feedback.classList.add("hidden");
+
+        q.options.forEach((opt, idx) => {
+          const btn = document.createElement("button");
+          btn.className = "quiz-option w-full text-left p-4 rounded-2xl border-2 border-romantic-200 hover:border-romantic-500 hover:bg-romantic-50 transition font-medium text-stone-800 text-sm flex items-center justify-between";
+          btn.innerHTML = `<span>${opt}</span><span class="w-6 h-6 rounded-full border border-romantic-300 flex items-center justify-center text-xs text-romantic-500">○</span>`;
+          btn.onclick = () => checkQuizAnswer(idx, btn);
+          optionsBox.appendChild(btn);
+        });
+      }
+
+      function checkQuizAnswer(selectedIdx, btnElement) {
+        const q = quizQuestions[currentQuizIdx];
+        const allBtns = document.getElementById("quiz-options-container").children;
+        for (let b of allBtns) b.disabled = true;
+
+        const feedback = document.getElementById("quiz-feedback");
+        feedback.classList.remove("hidden");
+
+        if (selectedIdx === q.correct) {
+          quizScore++;
+          document.getElementById("quiz-score-live").textContent = `Score: ${quizScore}`;
+          btnElement.classList.add("bg-green-100", "border-green-500", "text-green-900");
+          feedback.className = "p-3 rounded-2xl text-xs font-bold text-green-800 bg-green-50 border border-green-200 block";
+          feedback.textContent = `Sahi! ${q.explanation}`;
+          triggerConfettiBurst();
+        } else {
+          btnElement.classList.add("bg-red-100", "border-red-400", "text-red-900");
+          allBtns[q.correct].classList.add("bg-green-100", "border-green-500");
+          feedback.className = "p-3 rounded-2xl text-xs font-bold text-romantic-800 bg-romantic-50 border border-romantic-200 block";
+          feedback.textContent = `Hehe! ${q.explanation}`;
+        }
+
+        setTimeout(() => {
+          if (currentQuizIdx < quizQuestions.length - 1) {
+            currentQuizIdx++;
+            loadQuizQuestion();
+          } else {
+            showQuizResults();
+          }
+        }, 1800);
+      }
+
+      function showQuizResults() {
+        document.getElementById("quiz-active-view").classList.add("hidden");
+        const resView = document.getElementById("quiz-result-view");
+        resView.classList.remove("hidden");
+
+        document.getElementById("quiz-final-score").textContent = `${quizScore} / ${quizQuestions.length}`;
+
+        const emoji = document.getElementById("quiz-result-emoji");
+        const title = document.getElementById("quiz-result-title");
+        const desc = document.getElementById("quiz-result-desc");
+
+        if (quizScore === quizQuestions.length) {
+          emoji.textContent = "👑💕";
+          title.textContent = "Soulmate Level: 100%!";
+          desc.textContent = "Tum humein kisi se bhi zyada jaanti ho — yeh score toh bas naam ka tha, asli winner toh dil se thi 💖";
+          triggerCelebrationExplosion();
+        } else if (quizScore >= 4) {
+          emoji.textContent = "🥰✨";
+          title.textContent = "Pyara Score!";
+          desc.textContent = "Tumne dil se khel ke bahut acha kiya — aur har jawab mein pyaar dikh raha tha 💕";
+          triggerConfettiBurst();
+        } else {
+          emoji.textContent = "☕🙈";
+          title.textContent = "Ek Chai Date Zaroori Hai!";
+          desc.textContent = "Lagta hai ab humein ek aur pyaari date pe jaana padega — taaki sab yaad ho jaaye 😘";
+        }
+      }
+
+      function restartQuiz() {
+        currentQuizIdx = 0;
+        quizScore = 0;
+        document.getElementById("quiz-result-view").classList.add("hidden");
+        document.getElementById("quiz-active-view").classList.remove("hidden");
+        loadQuizQuestion();
+      }
+
+      /* ============================================
+         14. LOVE LETTER REVEAL
+         ============================================ */
+      let isEnvelopeOpen = false;
+      function toggleEnvelope() {
+        const box = document.getElementById("envelope-box");
+        const letter = document.getElementById("letter-content");
+
+        if (!isEnvelopeOpen) {
+          box.classList.add("envelope-open");
+          isEnvelopeOpen = true;
+          playChime(750);
+          triggerConfettiBurst();
+
+          setTimeout(() => {
+            letter.classList.remove("hidden");
+            letter.scrollIntoView({ behavior: "smooth", block: "center" });
+            typeLetterBody();
+          }, 600);
+        }
+      }
+
+      function foldEnvelope() {
+        const box = document.getElementById("envelope-box");
+        const letter = document.getElementById("letter-content");
+        letter.classList.add("hidden");
+        box.classList.remove("envelope-open");
+        isEnvelopeOpen = false;
+        document.getElementById("love-letter").scrollIntoView({ behavior: "smooth" });
+      }
+
+      function typeLetterBody() {
+        const body = document.getElementById("typewriter-letter-body");
+        if (!body || body.dataset.typed) return;
+        body.dataset.typed = "1";
+        const paras = body.querySelectorAll("p");
+        let i = 0;
+        const speed = 18;
+        function typeOne() {
+          if (i >= paras.length) return;
+          const p = paras[i];
+          const txt = p.textContent;
+          p.textContent = "";
+          let j = 0;
+          function nextChar() {
+            if (j >= txt.length) { i++; setTimeout(typeOne, 80); return; }
+            p.textContent += txt[j++];
+            setTimeout(nextChar, speed);
+          }
+          nextChar();
+        }
+        typeOne();
+      }
+
+      /* ============================================
+         15. LEAVE A MESSAGE
+         ============================================ */
+      function selectMood(moodText) {
+        const textarea = document.getElementById("user-love-note");
+        if (!textarea.value.includes(moodText)) {
+          textarea.value = (moodText + " - " + textarea.value).trim();
+        }
+      }
+
+      function handleMessageSubmit(e) {
+        e.preventDefault();
+        const note = document.getElementById("user-love-note").value.trim();
+        if (!note) return;
+
+        localStorage.setItem("sm_birthday_reply", note);
+        localStorage.setItem("sm_birthday_reply_time", new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+
+        triggerCelebrationExplosion();
+        document.getElementById("love-sent-modal").classList.remove("hidden");
+        document.getElementById("love-sent-modal").classList.add("flex");
+        loadSavedMessage();
+      }
+
+      function closeLoveSentModal() {
+        document.getElementById("love-sent-modal").classList.add("hidden");
+        document.getElementById("love-sent-modal").classList.remove("flex");
+      }
+
+      function loadSavedMessage() {
+        const saved = localStorage.getItem("sm_birthday_reply");
+        const time = localStorage.getItem("sm_birthday_reply_time");
+        if (saved) {
+          document.getElementById("saved-message-display").classList.remove("hidden");
+          document.getElementById("saved-note-text").textContent = `"${saved}"`;
+          document.getElementById("saved-note-time").textContent = time ? `Written at ${time}` : "Saved locally";
+        }
+      }
+
+      /* ============================================
+         16. MUSIC / CHIME SYSTEM (advanced)
+         ============================================ */
+      let audioCtx = null;
+      let chimeSoundEnabled = false; // Off by default (mobile autoplay policy)
+      let currentChordTimeout = null;
+
+      function toggleChimeSound() {
+        chimeSoundEnabled = !chimeSoundEnabled;
+        const icon = document.getElementById("sound-icon");
+        const bars = document.querySelectorAll("#music-bars .music-bar");
+        icon.textContent = chimeSoundEnabled ? "🎵" : "🔕";
+        if (chimeSoundEnabled) {
+          bars.forEach(b => b.classList.remove("paused"));
+          startRomanticChords();
+        } else {
+          bars.forEach(b => b.classList.add("paused"));
+          stopRomanticChords();
+        }
+      }
+
+      function playChime(freq = 520) {
+        if (!chimeSoundEnabled) return;
+        try {
+          if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          if (audioCtx.state === 'suspended') audioCtx.resume();
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = "sine";
+          osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(freq * 1.5, audioCtx.currentTime + 0.3);
+          gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.8);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start();
+          osc.stop(audioCtx.currentTime + 0.8);
+        } catch (e) {}
+      }
+
+      // Soft romantic chord loop (Web Audio API generated)
+      let chordLoopId = null;
+      function startRomanticChords() {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+
+        // Chord progression: C - Am - F - G (romantic feel)
+        const chords = [
+          [261.63, 329.63, 392.00], // C
+          [220.00, 261.63, 329.63], // Am
+          [174.61, 220.00, 261.63], // F
+          [196.00, 246.94, 293.66]  // G
+        ];
+        let chordIdx = 0;
+
+        function playChord() {
+          if (!chimeSoundEnabled) return;
+          const chord = chords[chordIdx % chords.length];
+          chord.forEach((freq, i) => {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = "sine";
+            osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+            gain.gain.setValueAtTime(0, audioCtx.currentTime);
+            gain.gain.linearRampToValueAtTime(0.04, audioCtx.currentTime + 0.3);
+            gain.gain.linearRampToValueAtTime(0.04, audioCtx.currentTime + 2.5);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 3.2);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 3.2);
+          });
+          chordIdx++;
+        }
+
+        playChord();
+        chordLoopId = setInterval(playChord, 3500);
+      }
+
+      function stopRomanticChords() {
+        if (chordLoopId) { clearInterval(chordLoopId); chordLoopId = null; }
+      }
+
+      /* ============================================
+         17. CONFETTI
+         ============================================ */
+      function triggerConfettiBurst() {
+        if (typeof confetti === "undefined") return;
+        confetti({ particleCount: 80, spread: 70, origin: { y: 0.6 }, colors: ['#ff4d6d','#ff758f','#ffb3c1','#ffffff','#ffd700'] });
+      }
+
+      function triggerCelebrationExplosion() {
+        if (typeof confetti === "undefined") return;
+        const duration = 1500;
+        const end = Date.now() + duration;
+        (function frame() {
+          confetti({ particleCount: 6, angle: 60, spread: 55, origin: { x: 0 }, colors: ['#ff4d6d','#ff758f','#ffd700'] });
+          confetti({ particleCount: 6, angle: 120, spread: 55, origin: { x: 1 }, colors: ['#ff4d6d','#ff758f','#ffd700'] });
+          if (Date.now() < end) requestAnimationFrame(frame);
+        })();
+      }
+
+      /* ============================================
+         18. SCROLL REVEAL OBSERVER + SMOOTH SCROLL
+         ============================================ */
+      function initScrollReveal() {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+
+        document.querySelectorAll(".reveal, .reveal-scale").forEach(el => {
+          observer.observe(el);
+        });
+      }
+
+      // Side nav dot active
+      const sections = document.querySelectorAll("section");
+      const navDots = document.querySelectorAll(".nav-dot");
+
+      window.addEventListener("scroll", () => {
+        let currentSection = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 220;
+          if (window.scrollY >= sectionTop) {
+            currentSection = section.getAttribute("id");
+          }
+        });
+
+        navDots.forEach((dot) => {
+          if (dot.getAttribute("data-section") === currentSection) {
+            dot.classList.remove("bg-romantic-300");
+            dot.classList.add("bg-romantic-600", "scale-125");
+          } else {
+            dot.classList.add("bg-romantic-300");
+            dot.classList.remove("bg-romantic-600", "scale-125");
+          }
+        });
+      });
+
+      // Parallax hero image
+      const heroImg = document.getElementById("hero-gif");
+      window.addEventListener("scroll", () => {
+        if (!heroImg) return;
+        const scrolled = window.scrollY;
+        if (scrolled < window.innerHeight) {
+          heroImg.style.transform = `translateY(${scrolled * 0.08}px) scale(${1 + scrolled * 0.0001})`;
+        }
+      });
+
+      /* ============================================
+         19. INITIALIZATION
+         ============================================ */
+      window.addEventListener("DOMContentLoaded", () => {
+        // Hide splash after small delay
+        setTimeout(() => {
+          document.getElementById("splash-screen").classList.add("hide");
+          setTimeout(() => document.getElementById("splash-screen").remove(), 900);
+        }, 1200);
+
+        checkPasswordAuth();
+        animateHeroHeadline();
+        renderGallery();
+        renderTareefGrid();
+        renderReasonsGrid();
+        renderTimeline();
+        renderFunnyFacts();
+        loadQuizQuestion();
+        loadSavedMessage();
+
+        // Initial scroll reveal trigger
+        setTimeout(initScrollReveal, 200);
+
+        // Initial confetti
+        setTimeout(triggerConfettiBurst, 1800);
+      });
+    </script>
+  </body>
+</html>
